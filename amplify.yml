@@ -5,14 +5,14 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm ci  # Install dependencies
+            - npm ci
         build:
           commands:
-            - npm run build  # Build the project (check that `dist` or `build` is created)
+            - npm run build
       artifacts:
-        baseDirectory: build  # Adjust this if your output folder is named differently (e.g., dist)
+        baseDirectory: build  # Ensure this matches your build output directory
         files:
-          - '**/*'  # Include all files in the build directory
+          - '**/*'
       cache:
         paths:
           - node_modules/**  # Cache node_modules to speed up future builds

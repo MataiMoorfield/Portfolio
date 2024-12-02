@@ -46,7 +46,6 @@ p {
     padding: 0px 20px;
 }
 
-
 /* Nav bar*/
 .nav a {
     color: #fff;
@@ -101,7 +100,6 @@ p {
     padding: 20px;
 }
 
-
 .columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -154,7 +152,7 @@ p1 {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out
+    transition: opacity 0.3s ease-in-out;
 }
 
 .modal.open {

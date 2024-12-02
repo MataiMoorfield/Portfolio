@@ -6,6 +6,7 @@
 -------------------------------------
 */
 
+/* Basic styling */
 body,
 html {
     margin: 0;
@@ -43,8 +44,26 @@ p {
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.2em;
-    padding: 0px 20px;
+    padding: 0px 200px;
 }
+
+p1 {
+    display: flex;
+    justify-content: center;
+    color: #c7c7c7;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    padding: 0px 215px;
+}
+
+.about,
+.gallery,
+.contact {
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
 
 /* Nav bar*/
 .nav a {
@@ -75,31 +94,11 @@ p {
     left: 0;
 }
 
-.fade-in-image {
-    animation: fadeIn 3s;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .clear {
     clear: both;
 }
 
-.about,
-.gallery,
-.contact {
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
+/* Columns */
 .columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -120,26 +119,8 @@ p {
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    .columns {
-        grid-template-columns: 1fr;
-    }
 
-    .column {
-        padding: 5px;
-    }
-}
-
-p1 {
-    display: flex;
-    justify-content: center;
-    color: #c7c7c7;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    padding: 0px 35px;
-}
-
-
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -181,4 +162,53 @@ p1 {
 .width-dontrol {
     max-width: 10px;
     padding-left: 100px;
+}
+
+
+/* Resizing */
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    .column {
+        padding: 5px;
+    }
+
+    p {
+        padding: 0px 20px; 
+    }
+
+    p1 {
+        padding: 0px 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    p {
+        padding: 0px 10px;
+    }
+    p1 {
+        padding: 0px 25px;
+    }
+    
+    .nav {
+        display: none; /* Hide the navigation on mobile */
+    }
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.fade-in-image {
+    animation: fadeIn 3s;
 }

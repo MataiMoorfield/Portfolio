@@ -1,8 +1,7 @@
 /*
 -------------------------------------
 -   Author: Matai Moorfield         -
--   Latest update: Nov 24           -
--   Copyright: 2024 (all images)    -
+-   Latest update: Dec 2024         -
 -------------------------------------
 */
 

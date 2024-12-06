@@ -1,10 +1,4 @@
-/*
--------------------------------------
--   Author: Matai Moorfield         -
--   Latest update: Dec 2024         -
--------------------------------------
-*/
-
+// Smooth Scroll
 var scroll = new SmoothScroll('a[href*="#"]', {
     speed: 200,
     speedAsDuration: true,
@@ -32,18 +26,11 @@ modal.innerHTML = '<span class="modal-close">&times;</span><img class="modal-con
 document.body.appendChild(modal);
 
 const modalContent = modal.querySelector(".modal-content");
+const modalClose = modal.querySelector(".modal-close");
 
-document.querySelectorAll(".gallery img").forEach((img) => {
-    img.addEventListener("click", function () {
-        modalContent.src = this.src;
-        modal.style.display = "flex";
-    });
-});
-
-modal.addEventListener("click", () => (modal.style.display = "none"));
-modal.querySelector(".modal-close").addEventListener("click", () => (modal.style.display = "none"));
-document.querySelectorAll(".gallery img").forEach((img) => {
-    img.addEventListener("click", function () {
+document.querySelectorAll(".gallery img:not(#Shop .column img)").forEach((img) => {
+    img.addEventListener("click", function (event) {
+        event.stopPropagation();
         modalContent.src = this.src;
         modal.style.display = "flex";
         setTimeout(() => modal.classList.add("open"), 5);
@@ -55,22 +42,18 @@ modal.addEventListener("click", () => {
     modal.addEventListener(
         "transitionend",
         function () {
-            if (!modal.classList.contains("open")) {
-                modal.style.display = "none";
-            }
+            modal.style.display = "none";
         },
         { once: true }
     );
 });
 
-modal.querySelector(".modal-close").addEventListener("click", () => {
+modalClose.addEventListener("click", () => {
     modal.classList.remove("open");
     modal.addEventListener(
         "transitionend",
         function () {
-            if (!modal.classList.contains("open")) {
-                modal.style.display = "none";
-            }
+            modal.style.display = "none";
         },
         { once: true }
     );

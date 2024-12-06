@@ -38,7 +38,7 @@ h1 {
     padding: 20px 20px;
 }
 
-p {
+p, i {
     display: flex;
     justify-content: center;
     color: #fff;
@@ -64,8 +64,7 @@ p1 {
     padding: 20px;
 }
 
-
-/* Nav bar*/
+/* Nav bar */
 .nav a {
     color: #fff;
     text-transform: uppercase;
@@ -119,12 +118,104 @@ p1 {
     border-radius: 5px;
 }
 
+/* Shop */
+#Shop .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#Shop .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#Shop .column p,
+#Shop .column i {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #fff;
+    text-align: center;
+}
+
+#Shop .column img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #000000;
+}
+
+.checkout-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.checkout-button:active {
+    background-color: #5f9ea0;
+    transform: scale(0.95);
+}
+
+.cart-button {
+    padding: 7px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.cacrt-button:active {
+    background-color: #5f9ea0;
+    transform: scale(0.95);
+}
 
 /* Modal */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
@@ -164,7 +255,6 @@ p1 {
     padding-left: 100px;
 }
 
-
 /* Resizing */
 @media (max-width: 768px) {
     .columns {
@@ -182,6 +272,7 @@ p1 {
     p1 {
         padding: 0px 35px;
     }
+    
 }
 
 @media screen and (max-width: 480px) {

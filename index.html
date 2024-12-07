@@ -96,28 +96,80 @@
             in photographs. I'd like to have a chance to develop my skills. For inquiries, please contact me.
         </p>
     </div>
-
     <div id="Shop" class="gallery">
         <h1>Shop</h1>
         <div class="columns">
-            <div class="column">
-                <img src="Images/Shop/Greeting card.png" alt="Tui" />
+            <div class="column" data-trigger="details-1">
+                <img src="Images/Shop/Greeting.png" alt="Greeting Card" data-dropdown="details-1" />
                 <p>Greeting Card</p>
-                <i>Coming Soon!</i>
+                <i>$4.95</i>
+    
             </div>
-            <div class="column">
-                <img src="Images/Shop/Calendar.png" alt="Calendar" />
+            <div class="column" data-trigger="details-2">
+                <img src="Images/Shop/Calendar.png" alt="Bird Calendar" data-dropdown="details-2" />
                 <p>Bird Calendar</p>
-                <i>Coming Soon!</i>
+                <i>$29.95</i>
             </div>
-            <div class="column">
-                <img src="Images/Shop/Frame.png" alt="Frame" />
+            <div class="column" data-trigger="details-3">
+                <img src="Images/Shop/Frame.png" alt="Print" data-dropdown="details-3" />
                 <p>Print</p>
-                <i>Coming Soon!</i>
+                <i>$19.95</i>
             </div>
         </div>
-    </div>
 
+        <!--Dropdown-->
+        <div id="details-1" class="dropdown hidden">
+            <div class="columns">
+                <div class="column" data-trigger="details-1">
+                    <img src="Images/Shop/Greeting.png" alt="Greeting Card"/>
+                </div>
+                <div class="column">
+                    <h1>Greeting Card</h1>
+                    <p style="text-align: left;">A beautiful Christmas or birthday greeting card.</p>
+                    <br />
+                    <i>Coming Soon!</i>
+                   <!-- <div class="checkout-container">
+                        <a href="https://buy.stripe.com/28oeY02dC4bt6Qw6op" target="_blank" class="checkout-button">Buy Now</a>
+                    </div>-->
+                </div>
+                </div>
+        </div>
+
+        <div id="details-2" class="dropdown hidden">
+            <div class="columns">
+                <div class="column">
+                    <img src="Images/Shop/Calendar.png" alt="Calendar"/>
+                </div>
+                <div class="column">
+                    <h1>Greeting Card</h1>
+                    <p style="text-align: left;">A high-quality bird calendar featuring 12 unique bird species, one for each month.</p>
+                    <br />
+                    <i>Coming Soon!</i>
+                   <!-- <div class="checkout-container">
+                        <a href="https://buy.stripe.com/28oeY02dC4bt6Qw6op" target="_blank" class="checkout-button">Buy Now</a>
+                    </div>-->
+                </div>
+                </div>
+        </div>
+
+        <div id="details-3" class="dropdown hidden">
+            <div class="columns">
+                <div class="column">
+                    <img src="Images/Shop/Frame.png" alt="Print" />
+                </div>
+                <div class="column">
+                    <h1>Print</h1>
+                    <p style="text-align: left;">A beautiful A3 or A4 print on premium 400gsm paper.</p>
+                    <br />
+                    <i>Coming Soon!</i>
+                   <!-- <div class="checkout-container">
+                        <a href="https://buy.stripe.com/28oeY02dC4bt6Qw6op" target="_blank" class="checkout-button">Buy Now</a>
+                    </div>-->
+                </div>
+                </div>
+        </div>
+    </div>
+        
     <!-- Footer -->
     <br />
     <br />

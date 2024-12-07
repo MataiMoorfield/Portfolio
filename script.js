@@ -58,3 +58,41 @@ modalClose.addEventListener("click", () => {
         { once: true }
     );
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const shopColumns = document.querySelectorAll('#Shop .column');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    shopColumns.forEach(column => {
+        column.addEventListener('click', event => {
+            const target = event.target.closest('[data-dropdown]');
+
+            if (target) {
+                const dropdownId = target.getAttribute('data-dropdown');
+
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.id !== dropdownId && !dropdown.classList.contains('hidden')) {
+                        toggleDropdown(dropdown.id);
+                    }
+                });
+                toggleDropdown(dropdownId);
+                scrollToElement(dropdownId);
+            }
+        });
+    });
+
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        if (dropdown) {
+            dropdown.classList.toggle('hidden');
+            dropdown.classList.toggle('visible');
+        }
+    }
+
+    function scrollToElement(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});

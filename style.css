@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
     font: bold 14px/1.4 "Open Sans", Arial, sans-serif;
     background: #000;
     scroll-behavior: smooth;
@@ -94,10 +94,10 @@ p1 {
 /* Columns */
 .columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 1200px; /* Set a max width */
-    margin: 0 auto; /* Center columns */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .column {
@@ -152,7 +152,7 @@ p1 {
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
-    position: relative; /* To position the close button */
+    position: relative;
     text-align: center;
 }
 
@@ -252,6 +252,17 @@ p1 {
     padding-left: 100px;
 }
 
+/* Animations */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+  
 /* Resizing */
 @media (max-width: 768px) {
     .columns {
@@ -283,16 +294,15 @@ p1 {
         display: none;
     }
 
-    /* Adjusting the image padding and centering */
     .fade-in-image img {
         width: 100%;
-        max-width: 300px; /* Adjust this value according to your needs */
-        margin: auto; /* Centering the image */
-    }
+        max-width: 300px;
+        margin: auto;
+    } 
 
     .about,
     .gallery,
     .contact {
-        padding: 10px; /* Reducing padding for a tighter layout on mobile */
+        padding: 10px;
     }
 }

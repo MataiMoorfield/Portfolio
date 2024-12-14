@@ -1,7 +1,9 @@
 /* Basic styling */
-body,
-html {
+body, html {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     font: bold 14px/1.4 "Open Sans", Arial, sans-serif;
     background: #000;
     scroll-behavior: smooth;
@@ -92,11 +94,10 @@ p1 {
 /* Columns */
 .columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
     gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Set a max width */
+    margin: 0 auto; /* Center columns */
 }
 
 .column {
@@ -144,6 +145,7 @@ p1 {
     object-fit: cover;
 }
 #Shop .dropdown {
+    max-width: 100%;
     display: none;
     background-color: #000000;
     color: white;
@@ -265,7 +267,7 @@ p1 {
     }
 
     p1 {
-        padding: 0px 35px;
+        padding: 0px 10px;
     }
 }
 

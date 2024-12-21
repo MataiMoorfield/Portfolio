@@ -282,6 +282,9 @@ p1 {
   p1 {
     padding: 0px 10px;
   }
+  .fade-in-image img {
+    width: 1000%;
+  }
 }
 
 @media screen and (max-width: 480px) {

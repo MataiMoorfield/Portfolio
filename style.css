@@ -24,7 +24,7 @@ li {
   position: relative;
   padding: 15px 0;
 }
-h1 {
+h1, h2 {
   text-align: center;
   color: #fff;
   text-transform: uppercase;

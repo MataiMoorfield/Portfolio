@@ -33,14 +33,13 @@ h1, h2 {
   padding: 20px 20px;
 }
 
-p,
-i {
+p, i {
   display: flex;
   justify-content: center;
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.2em;
-  padding: 0px 200px;
+
 }
 
 p1 {

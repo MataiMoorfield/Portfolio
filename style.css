@@ -255,6 +255,10 @@ p1 {
   padding-left: 100px;
 }
 
+img[src="Images/signature.png"] {
+  pointer-events: none;
+}
+
 /* Animations */
 @keyframes fadeInAnimation {
   0% {

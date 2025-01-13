@@ -11,7 +11,6 @@ document.querySelectorAll('a[href*="#"]').forEach((link) => {
         event.preventDefault();
         const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
-
         scroll.animateScroll(targetElement, null, {
             callback: () => {
                 history.replaceState(null, null, " ");
@@ -22,13 +21,19 @@ document.querySelectorAll('a[href*="#"]').forEach((link) => {
 
 const modal = document.createElement("div");
 modal.className = "modal";
-modal.innerHTML = '<span class="modal-close">&times;</span><img class="modal-content" />';
+modal.innerHTML = '×';
 document.body.appendChild(modal);
 
-const modalContent = modal.querySelector(".modal-content");
-const modalClose = modal.querySelector(".modal-close");
+const modalContent = document.createElement("img");
+modalContent.className = "modal-content";
+modal.appendChild(modalContent);
 
-document.querySelectorAll(".gallery img:not(#Shop .column img)").forEach((img) => {
+const modalClose = document.createElement("span");
+modalClose.className = "modal-close";
+modalClose.innerHTML = '×';
+modal.appendChild(modalClose);
+
+document.querySelectorAll(".gallery img").forEach((img) => {
     img.addEventListener("click", function (event) {
         event.stopPropagation();
         modalContent.src = this.src;
@@ -66,10 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
     shopColumns.forEach(column => {
         column.addEventListener('click', event => {
             const target = event.target.closest('[data-dropdown]');
-
             if (target) {
                 const dropdownId = target.getAttribute('data-dropdown');
-
                 dropdowns.forEach(dropdown => {
                     if (dropdown.id !== dropdownId && !dropdown.classList.contains('hidden')) {
                         toggleDropdown(dropdown.id);

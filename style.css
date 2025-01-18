@@ -24,6 +24,7 @@ li {
   position: relative;
   padding: 15px 0;
 }
+
 h1, h2 {
   text-align: center;
   color: #fff;
@@ -46,6 +47,7 @@ p, i {
 p1 {
   display: flex;
   justify-content: center;
+  text-align: justify;
   color: #c7c7c7;
   text-decoration: none;
   letter-spacing: 0.2em;

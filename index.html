@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 
 <head>
     <meta charset="UTF-8" />
@@ -26,65 +26,125 @@
 
 <!-- Main Content -->
 <body>
-    <div class="nav">
+    <div class="nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <ul>
-            <a href="#about" aria-label="Learn more about Matai Moorfield">About</a>
-            <a href="#gallery" aria-label="View the photography gallery">Gallery</a>
-            <a href="#contact" aria-label="Contact Matai Moorfield">Contact</a>
-            <a href="#shop" aria-label="Shop photography prints and products">Shop</a>
+            <a href="#about" itemprop="url" aria-label="Learn more about Matai Moorfield">About</a>
+            <a href="#gallery" itemprop="url" aria-label="View the photography gallery">Gallery</a>
+            <a href="#contact" itemprop="url" aria-label="Contact Matai Moorfield">Contact</a>
+            <a href="#shop" itemprop="url" aria-label="Shop photography prints and products">Shop</a>
         </ul>
     </div>
-    <h1>Matai Moorfield</h1>
-    <p>STUDENT WILDLIFE PHOTOGRAPHER</p>
+
+    <div itemscope itemtype="https://schema.org/Person">
+    <h1 itemprop="name">Matai Moorfield</h1>
+    <p itemprop="jobTitle">STUDENT WILDLIFE PHOTOGRAPHER</p>
     <div class="fade-in-image">
         <img src="Images/Tui (hero).jpg" alt="Tui" style="width: 80%; float: right; animation: fadeInAnimation ease 3s; padding-right: 10%;" />
     </div>
     <div class="clear"></div>
     <div id="about" class="about">
         <h1>About</h1>
-        <p style="text-align: justify;">
+        <p itemprop="description" style="text-align: justify;">
             Student wildlife photographer based in New Zealand's Waikato region. Passionate about photographing wildlife and native birds.
         </p>
     </div>
+</div>
 
     <!-- Gallery -->
-    <div id="gallery" class="gallery">
+    <div id="gallery" class="gallery" itemscope itemtype="https://schema.org/CreativeWork">
         <h1>Gallery</h1>
         <div class="columns">
             <div class="column">
-                <img src="Images/Tui 1.jpg" alt="Native Tui bird photo eating nectar in a flax bush bird photo" title="Native Tui bird photo eating nectar in a flax bush bird photo" loading="lazy" />
-                <img src="Images/Pied Shag 1.jpg" alt="Endangered Pied Shags on a branch bird photo" title="Endangered Pied Shags on a branch bird photo" loading="lazy" />
-                <img src="Images/Lorikeet 1.jpg" alt="Australian Rainbow Lorikeet bird photo" title="Australian Rainbow Lorikeet bird photo" loading="lazy" />
-                <img src="Images/Blue Duck 2.jpg" alt="Native and endangered Blue Duck/Whio shaking water off its head bird photo" title="Native and endangered Blue Duck/Whio shaking water off its head bird photo" loading="lazy" />
-                <img src="Images/Gannet 2.jpg" alt="Australian Gannet hunting for fish bird photo" title="Australian Gannet hunting for fish bird photo" loading="lazy" />
-                <img src="Images/Tui 3.jpg" alt="Native Tui bird eating nectar in a flax bush bird photo" title="Native Tui bird eating nectar in a flax bush bird photo" loading="lazy" />
-                <img src="Images/Frog.jpg" alt="Green and golden bell frog on a flax leaf bird photo" title="Green and golden bell frog on a flax leaf bird photo" loading="lazy" />
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Tui 1.jpg" alt="Native Tui bird photo eating nectar in a flax bush bird photo" itemprop="contentUrl" title="Native Tui bird photo eating nectar in a flax bush bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native Tui bird photo eating nectar in a flax bush bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Pied Shag 1.jpg" alt="Endangered Pied Shags on a branch bird photo" itemprop="contentUrl" title="Endangered Pied Shags on a branch bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Endangered Pied Shags on a branch bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Lorikeet 1.jpg" alt="Australian Rainbow Lorikeet bird photo" itemprop="contentUrl" title="Australian Rainbow Lorikeet bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Australian Rainbow Lorikeet bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Blue Duck 2.jpg" alt="Native and endangered Blue Duck/Whio shaking water off its head bird photo" itemprop="contentUrl" title="Native and endangered Blue Duck/Whio shaking water off its head bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native and endangered Blue Duck/Whio shaking water off its head bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Gannet 2.jpg" alt="Australian Gannet hunting for fish bird photo" itemprop="contentUrl" title="Australian Gannet hunting for fish bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Australian Gannet hunting for fish bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Tui 3.jpg" alt="Native Tui bird eating nectar in a flax bush bird photo" itemprop="contentUrl" title="Native Tui bird eating nectar in a flax bush bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native Tui bird eating nectar in a flax bush bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Frog.jpg" alt="Green and golden bell frog on a flax leaf bird photo" itemprop="contentUrl" title="Green and golden bell frog on a flax leaf bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Green and golden bell frog on a flax leaf bird photo</figcaption>
+                </figure>
             </div>
             <div class="column">
-                <img src="Images/Blue Duck 1.jpg" alt="Native and endangered Blue Duck/Whio bird photo" title="Native and endangered Blue Duck/Whio bird photo" loading="lazy" />
-                <img src="Images/Tui 2.jpg" alt="Native Tui bird eating nectar in a flax bush bird photo" title="Native Tui bird eating nectar in a flax bush bird photo" loading="lazy" />
-                <img src="Images/Chaffinch.jpg" alt="Eurasian female chaffinch perched in a Kowhai tree bird photo" title="Eurasian female chaffinch perched in a Kowhai tree bird photo" loading="lazy" />
-                <img src="Images/Dotterel 1.jpg" alt="Native and endangered Northern Dotterel bird photo" title="Native and endangered Northern Dotterel bird photo" loading="lazy" />
-                <!--<img src="Images/Pied Shag.jpg" alt="Native and endangered Northern Dotterel bird photo" title="Native and endangered Northern Dotterel bird photo" loading="lazy" />-->
-                <img src="Images/Seagull.jpg" alt="Native New Zealand endangered Pied Shag fine art bird photo" title="Native New Zealand endangered Pied Shag fine art bird photo" loading="lazy" />
-                <img src="Images/Gannet 1.jpg" alt="Australian Gannet hunting for fish bird photo" title="Australian Gannet hunting for fish bird photo" loading="lazy" />
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Blue Duck 1.jpg" alt="Native and endangered Blue Duck/Whio bird photo" itemprop="contentUrl" title="Native and endangered Blue Duck/Whio bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native and endangered Blue Duck/Whio bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Tui 2.jpg" alt="Native Tui bird eating nectar in a flax bush bird photo" itemprop="contentUrl" title="Native Tui bird eating nectar in a flax bush bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native Tui bird eating nectar in a flax bush bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Chaffinch.jpg" alt="Eurasian female chaffinch perched in a Kowhai tree bird photo" itemprop="contentUrl" title="Eurasian female chaffinch perched in a Kowhai tree bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Eurasian female chaffinch perched in a Kowhai tree bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Dotterel 1.jpg" alt="Native and endangered Northern Dotterel bird photo" itemprop="contentUrl" title="Native and endangered Northern Dotterel bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native and endangered Northern Dotterel bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Seagull.jpg" alt="Native New Zealand endangered Pied Shag fine art bird photo" itemprop="contentUrl" title="Native New Zealand endangered Pied Shag fine art bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Native New Zealand endangered Pied Shag fine art bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Gannet 1.jpg" alt="Australian Gannet hunting for fish bird photo" itemprop="contentUrl" title="Australian Gannet hunting for fish bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Australian Gannet hunting for fish bird photo</figcaption>
+                </figure>
             </div>
             <div class="column">
-                <img src="Images/Spotted Shag.jpg" alt="Endangered juvenile Spotted Shag bird photo" title="Endangered juvenile Spotted Shag bird photo" loading="lazy" />
-                <img src="Images/Pelican.jpg" alt="Australian pelican waiting for fish bird photo" title="Australian pelican waiting for fish bird photo" loading="lazy" />
-                <img src="Images/Dotterel 2.jpg" alt="Endangered Northern Dotterel hunting for food bird photo" title="Endangered Northern Dotterel hunting for food bird photo" loading="lazy" />
-                <img src="Images/Pied Shag 3.jpg" alt="Endangered Pied Shag bird photo" title="Endangered Pied Shag bird photo" loading="lazy" />
-                <img src="Images/Lorikeet 2.jpg" alt="Australian Rainbow Lorikeet bird photo" title="Australian Rainbow Lorikeet bird photo" loading="lazy" />
-                <img src="Images/Oystercatcher.jpg" alt="Endemic and endangered variable oystercatcher bird photo" title="Endemic and endangered variable oystercatcher bird photo" loading="lazy" />
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Spotted Shag.jpg" alt="Endangered juvenile Spotted Shag bird photo" itemprop="contentUrl" title="Endangered juvenile Spotted Shag bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Endangered juvenile Spotted Shag bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Pelican.jpg" alt="Australian pelican waiting for fish bird photo" itemprop="contentUrl" title="Australian pelican waiting for fish bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Australian pelican waiting for fish bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Dotterel 2.jpg" alt="Endangered Northern Dotterel hunting for food bird photo" itemprop="contentUrl" title="Endangered Northern Dotterel hunting for food bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Endangered Northern Dotterel hunting for food bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Pied Shag 3.jpg" alt="Endangered Pied Shag bird photo" itemprop="contentUrl" title="Endangered Pied Shag bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Endangered Pied Shag bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Lorikeet 2.jpg" alt="Australian Rainbow Lorikeet bird photo" itemprop="contentUrl" title="Australian Rainbow Lorikeet bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Australian Rainbow Lorikeet bird photo</figcaption>
+                </figure>
+                <figure itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="Images/Oystercatcher.jpg" alt="Endemic and endangered variable oystercatcher bird photo" itemprop="contentUrl" title="Endemic and endangered variable oystercatcher bird photo" loading="lazy" />
+                    <figcaption itemprop="description">Endemic and endangered variable oystercatcher bird photo</figcaption>
+                </figure>
             </div>
         </div>
     </div>
     
+    
 
     <!--Contact-->
-    <div id="contact" class="contact">
+    <div id="contact" class="contact" itemscope itemtype="https://schema.org/ContactPoint">
         <h1>Contact</h1>
-        <p>Email:&nbsp;<a style="color: white;" href="mailto:matai@moorfield.co.nz">matai@moorfield.co.nz</a></p>
+        <p>Email:&nbsp;<a style="color: white;" href="mailto:matai@moorfield.co.nz" itemprop="email">matai@moorfield.co.nz</a></p>
         <p style="text-align: justify;">
             While I do specialise in wildlife photography, I am also skilled in other types, such as portraits and events. I charge a small hourly rate to cover costs for my gear and really enjoy capturing unique moments in simple photographs. For inquiries, please
             contact me.
@@ -92,26 +152,26 @@
     </div>
 
     <!--Shop-->
-    <div id="shop" class="gallery">
+    <div id="shop" class="gallery" itemscope itemtype="https://schema.org/OfferCatalog">
         <h1>Shop</h1>
         <div class="columns">
-            <div class="column" data-trigger="details-1">
-                <img src="Images/Shop/Greeting card.png" alt="Greeting Card" data-dropdown="details-1" loading="lazy" />
-                <p>Greeting Cards</p>
+            <div class="column" itemscope itemtype="https://schema.org/Offer">
+                <img src="Images/Shop/Greeting card.png" alt="Greeting Card" loading="lazy" />
+                <p itemprop="name">Greeting Cards</p>
             </div>
-            <div class="column" data-trigger="details-2">
+            <div class="column" itemscope itemtype="https://schema.org/Offer">
                 <img src="Images/Shop/Calendar.png" alt="Bird Calendar" data-dropdown="details-2" loading="lazy" />
-                <p>Bird Calendars</p>
+                <p itemprop="name">Bird Calendars</p>
             </div>
-            <div class="column" data-trigger="details-3">
+            <div class="column" itemscope itemtype="https://schema.org/Offer">
                 <img src="Images/Shop/Print.png" alt="Print" data-dropdown="details-3" loading="lazy" />
-                <p>Prints and blocks</p>
+                <p itemprop="name">Prints and blocks</p>
             </div>
         </div>
         <br>
         <br>
         <div class="checkout-container">
-            <a href="https://shopmatai.bigcartel.com" target="_blank" class="checkout-button">Shop Now</a>
+            <a href="https://shopmatai.bigcartel.com" target="_blank" class="checkout-button" itemprop="url">Shop Now</a>
         </div>
 
         <!-- Footer -->

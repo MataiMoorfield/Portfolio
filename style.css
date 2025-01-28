@@ -257,10 +257,6 @@ p1 {
   padding-left: 100px;
 }
 
-img[src="Images/signature.png"] {
-  pointer-events: none;
-}
-
 /* Animations */
 @keyframes fadeInAnimation {
   0% {
@@ -292,9 +288,10 @@ img[src="Images/signature.png"] {
   .fade-in-image img {
     width: 1000%;
   }
+  
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   p {
     padding: 0px 10px;
   }
@@ -308,13 +305,15 @@ img[src="Images/signature.png"] {
 
   .fade-in-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
     margin: auto;
   }
+}
 
-  .about,
-  .gallery,
-  .contact {
-    padding: 10px;
+@media screen and (max-width: 480px) {
+  .fade-in-image img {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
   }
 }

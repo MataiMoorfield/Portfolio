@@ -12,9 +12,11 @@ document.querySelectorAll('a[href*="#"]').forEach((link) => {
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
             event.preventDefault();
-            scroll.animateScroll(targetElement, null, {
-                callback: () => history.replaceState(null, null, " "),
-            });
+            setTimeout(() => {
+                scroll.animateScroll(targetElement, null, {
+                    callback: () => history.replaceState(null, null, " "),
+                });
+            }, 50); // Small delay to allow any layout shifts to settle
         }
     });
 });
@@ -48,3 +50,16 @@ function closeModal() {
 
 modal.addEventListener("click", closeModal);
 modalClose.addEventListener("click", closeModal);
+
+// Ensure proper scrolling after full page load
+window.onload = function () {
+    setTimeout(() => {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                scroll.animateScroll(targetElement);
+            }
+        }
+    }, 100); // Delay allows layout to stabilize
+};

@@ -7,7 +7,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 document.querySelectorAll('a[href*="#"]').forEach((link) => {
-    link.addEventListener("click", function (event) {
+    link.addEventListener("click", function(event) {
         const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
@@ -16,7 +16,7 @@ document.querySelectorAll('a[href*="#"]').forEach((link) => {
                 scroll.animateScroll(targetElement, null, {
                     callback: () => history.replaceState(null, null, " "),
                 });
-            }, 50); // Small delay to allow any layout shifts to settle
+            }, 50);
         }
     });
 });
@@ -31,7 +31,7 @@ const modalContent = modal.querySelector(".modal-content");
 const modalClose = modal.querySelector(".modal-close");
 
 document.querySelectorAll(".gallery img").forEach((img) => {
-    img.addEventListener("click", function (event) {
+    img.addEventListener("click", function(event) {
         event.stopPropagation();
         modalContent.src = this.src;
         modal.style.display = "flex";
@@ -43,16 +43,17 @@ function closeModal() {
     modal.classList.remove("open");
     modal.addEventListener(
         "transitionend",
-        () => (modal.style.display = "none"),
-        { once: true }
+        () => (modal.style.display = "none"), {
+            once: true
+        }
     );
 }
 
 modal.addEventListener("click", closeModal);
 modalClose.addEventListener("click", closeModal);
 
-// Ensure proper scrolling after full page load
-window.onload = function () {
+// Ensure proper scrolling after page load
+window.onload = function() {
     setTimeout(() => {
         const hash = window.location.hash.substring(1);
         if (hash) {
@@ -61,5 +62,5 @@ window.onload = function () {
                 scroll.animateScroll(targetElement);
             }
         }
-    }, 100); // Delay allows layout to stabilize
+    }, 100);
 };

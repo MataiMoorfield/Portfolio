@@ -40,8 +40,8 @@ p, i {
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.2em;
-  padding-left: 10%; 
-  padding-right: 10%;
+  padding-left: 15%; 
+  padding-right: 15%;
 }
 
 p1 {
@@ -279,7 +279,8 @@ p1 {
   }
 
   p {
-    padding: 0px 20px;
+    padding-left: 10%; 
+    padding-right: 10%;
   }
 
   p1 {
@@ -294,7 +295,10 @@ p1 {
 @media screen and (max-width: 600px) {
   p {
     padding: 0px 10px;
+    padding-left: 5%; 
+    padding-right: 5%;
   }
+
   p1 {
     padding: 0px 25px;
   }

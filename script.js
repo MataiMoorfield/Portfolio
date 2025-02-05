@@ -86,3 +86,26 @@ const handleForm = async (e) => {
         alert('Failed to send email');
     }
 };
+
+
+// Loading
+window.addEventListener('load', function() {
+    // Hide the loading screen after a delay of 2 seconds (or as soon as the page finishes loading)
+    setTimeout(function() {
+      const loadingScreen = document.getElementById('loading-screen');
+      const content = document.getElementById('content');
+      
+      // Fade out the loading screen
+      loadingScreen.style.transition = 'opacity 1s ease';
+      loadingScreen.style.opacity = '0';
+  
+      // After the fade out, hide the loading screen and display the content
+      setTimeout(function() {
+        loadingScreen.style.display = 'none'; // Hide the loading screen completely
+        content.style.display = 'block';
+        content.style.opacity = '1'; // Fade in the content
+        content.style.transition = 'opacity 1s ease';
+      }, 1000); // Time for fade-out to complete
+    }, 2000); // Adjust the delay time as needed
+  });
+  

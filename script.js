@@ -123,3 +123,8 @@ window.addEventListener('load', function() {
         });
     }
 });
+
+// bot 
+function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }

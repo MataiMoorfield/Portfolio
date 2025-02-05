@@ -1,0 +1,65 @@
+/* Basic styling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font: bold 14px/1.4 "Open Sans", Arial, sans-serif;
+  background: #000;
+  scroll-behavior: smooth;
+}
+
+ul {
+  margin: 40px auto 0;
+  padding: 0;
+  list-style: none;
+  display: table;
+  width: 700px;
+  text-align: center;
+}
+
+li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  padding: 20px 20px;
+}
+
+p,
+i {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+p1 {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  color: #c7c7c7;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  padding: 0px 215px;
+}
+
+.about,
+.gallery,
+.contact {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}

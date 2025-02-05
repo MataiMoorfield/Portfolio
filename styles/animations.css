@@ -1,0 +1,79 @@
+
+/* Animations */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Resizing */
+@media (max-width: 768px) {
+  p {
+    padding: 0px 20px;
+  }
+
+  p1 {
+    padding: 0px 10px;
+  }
+
+  .fade-in-image img {
+    width: 1000%;
+  }
+  #contact-form {
+    max-width: 100%;
+    margin: 4px auto;
+    padding: 2px;
+  }
+
+}
+
+@media (max-width: 680px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    padding: 5px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  p {
+    padding: 0px 10px;
+  }
+
+  p1 {
+    padding: 0px 25px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .fade-in-image img {
+    width: 1000%;
+    max-width: 600px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fade-in-image img {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  p,
+  p1 {
+    font-size: 14px;
+  }
+}

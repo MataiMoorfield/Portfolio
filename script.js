@@ -87,25 +87,39 @@ const handleForm = async (e) => {
     }
 };
 
-
 // Loading
 window.addEventListener('load', function() {
-    // Hide the loading screen after a delay of 2 seconds (or as soon as the page finishes loading)
-    setTimeout(function() {
-      const loadingScreen = document.getElementById('loading-screen');
-      const content = document.getElementById('content');
-      
-      // Fade out the loading screen
-      loadingScreen.style.transition = 'opacity 1s ease';
-      loadingScreen.style.opacity = '0';
-  
-      // After the fade out, hide the loading screen and display the content
-      setTimeout(function() {
-        loadingScreen.style.display = 'none'; // Hide the loading screen completely
-        content.style.display = 'block';
-        content.style.opacity = '1'; // Fade in the content
-        content.style.transition = 'opacity 1s ease';
-      }, 1000); // Time for fade-out to complete
-    }, 2000); // Adjust the delay time as needed
-  });
-  
+    const images = document.querySelectorAll('img');
+    let loadedImages = 0;
+
+    function checkImagesLoaded() {
+        loadedImages++;
+        if (loadedImages === images.length) {
+            const loadingScreen = document.getElementById('loading-screen');
+            const content = document.getElementById('content');
+
+            loadingScreen.style.transition = 'opacity 1s ease';
+            loadingScreen.style.opacity = '0';
+
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+                content.style.display = 'block';
+                content.style.opacity = '1';
+                content.style.transition = 'opacity 1s ease';
+            }, 1000);
+        }
+    }
+
+    if (images.length === 0) {
+        checkImagesLoaded();
+    } else {
+        images.forEach(function(image) {
+            image.addEventListener('load', checkImagesLoaded);
+
+            // Check if image is already loaded (in case it comes from cache)
+            if (image.complete) {
+                checkImagesLoaded();
+            }
+        });
+    }
+});

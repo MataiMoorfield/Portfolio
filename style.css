@@ -25,7 +25,8 @@ li {
   padding: 15px 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #fff;
   text-transform: uppercase;
@@ -34,13 +35,14 @@ h1, h2 {
   padding: 20px 20px;
 }
 
-p, i {
+p,
+i {
   display: flex;
   justify-content: center;
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.2em;
-  padding-left: 10%; 
+  padding-left: 10%;
   padding-right: 10%;
 }
 
@@ -149,6 +151,7 @@ p1 {
   border-radius: 5px;
   object-fit: cover;
 }
+
 #Shop .dropdown {
   max-width: 100%;
   display: none;
@@ -212,6 +215,82 @@ p1 {
   background-color: #5f9ea0;
   transform: scale(0.95);
 }
+
+/* Contact form */
+#contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font: bold 14px/1.4 "Open Sans", Arial, sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+  background: #ffffff;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #727272;
+  outline: none;
+}
+
+#contact-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+#contact-form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+#contact-form input[type="submit"]:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+
 
 /* Modal */
 .modal {
@@ -277,10 +356,11 @@ p1 {
   p1 {
     padding: 0px 10px;
   }
+
   .fade-in-image img {
     width: 1000%;
   }
-  
+
 }
 
 @media (max-width: 680px) {
@@ -290,6 +370,12 @@ p1 {
 
   .column {
     padding: 5px;
+  }
+
+  #contact-form {
+    max-width: 100%;
+    margin: 4px auto;
+    padding: 2px;
   }
 }
 
@@ -322,7 +408,9 @@ p1 {
 }
 
 @media screen and (max-width: 400px) {
-  p, p1 {
+
+  p,
+  p1 {
     font-size: 10px;
   }
 }

@@ -7,7 +7,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 document.querySelectorAll('a[href*="#"]').forEach((link) => {
-    link.addEventListener("click", function(event) {
+    link.addEventListener("click", function (event) {
         const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
@@ -31,7 +31,7 @@ const modalContent = modal.querySelector(".modal-content");
 const modalClose = modal.querySelector(".modal-close");
 
 document.querySelectorAll(".gallery img").forEach((img) => {
-    img.addEventListener("click", function(event) {
+    img.addEventListener("click", function (event) {
         event.stopPropagation();
         modalContent.src = this.src;
         modal.style.display = "flex";
@@ -44,8 +44,8 @@ function closeModal() {
     modal.addEventListener(
         "transitionend",
         () => (modal.style.display = "none"), {
-            once: true
-        }
+        once: true
+    }
     );
 }
 
@@ -53,7 +53,7 @@ modal.addEventListener("click", closeModal);
 modalClose.addEventListener("click", closeModal);
 
 // Ensure proper scrolling after page load
-window.onload = function() {
+window.onload = function () {
     setTimeout(() => {
         const hash = window.location.hash.substring(1);
         if (hash) {
@@ -63,4 +63,26 @@ window.onload = function() {
             }
         }
     }, 100);
+};
+
+(function () {
+    emailjs.init('puowg7Gpudrlu45UV');
+    console.log("EmailJS initialized");
+})();
+
+const handleForm = async (e) => {
+    e.preventDefault();
+    console.log("Form submission started");
+
+    const form = document.getElementById('contact-form');
+    console.log("Form data:", new FormData(form));
+
+    try {
+        const response = await emailjs.sendForm('service_6m1t6ul', 'template_portfolio', form);
+        console.log("Email sent successfully:", response);
+        alert('Email sent!');
+    } catch (error) {
+        console.error("Email send failed:", error);
+        alert('Failed to send email');
+    }
 };

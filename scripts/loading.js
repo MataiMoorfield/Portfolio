@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 gallery.classList.add("active"); // Add 'active' class when it appears
-                observer.unobserve(gallery); // Stop observing after fade-in
+                observer.unobserve(about); // Stop observing after fade-in
             }
         });
     }, { threshold: 0.3 });
 
-    observer.observe(gallery);
+    observer.observe(about);
 });
 

@@ -35,15 +35,19 @@ window.addEventListener('load', function() {
     }
 });
 
-const gallery = document.getElementById('gallery');
+// Gallery fade in
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector(".fade-in");
 
-window.addEventListener('scroll', function() {
-  const galleryTop = gallery.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gallery.classList.add("active"); // Add 'active' class when it appears
+                observer.unobserve(gallery); // Stop observing after fade-in
+            }
+        });
+    }, { threshold: 0.3 });
 
-  if (galleryTop < windowHeight * 0.3) {
-    gallery.classList.add('active');
-  } else {
-    gallery.classList.remove('active');
-  }
+    observer.observe(gallery);
 });
+

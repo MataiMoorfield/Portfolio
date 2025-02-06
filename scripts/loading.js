@@ -35,14 +35,13 @@ window.addEventListener('load', function() {
     }
 });
 
-// JavaScript
 const gallery = document.getElementById('gallery');
 
 window.addEventListener('scroll', function() {
   const galleryTop = gallery.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
-  if (galleryTop < windowHeight * 0.8) { // Adjust threshold as needed
+  if (galleryTop < windowHeight * 0.8) {
     gallery.classList.add('active');
   } else {
     gallery.classList.remove('active');

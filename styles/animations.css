@@ -10,15 +10,6 @@
   }
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in;
-}
-
-.fade-in.active {
-  opacity: 1;
-}
-
 /* Resizing */
 @media (max-width: 768px) {
   p {

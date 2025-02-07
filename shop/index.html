@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product button {
+            margin: 0 5px;
+        }
+
+        .quantity {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product">
+        Greeting Card: &nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="changeQuantity('item1', -1)">-</button>
+        <span id="item1-quantity" class="quantity">1</span>
+        <button onclick="changeQuantity('item1', 1)">+</button>
+    </div>
+
+    <div class="product">
+        A3 Print: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="changeQuantity('item2', -1)">-</button>
+        <span id="item2-quantity" class="quantity">1</span>
+        <button onclick="changeQuantity('item2', 1)">+</button>
+    </div>
+
+    <button id="checkout">Checkout</button>
+</body>
+<script src="https://js.stripe.com/v3"></script>
+<script src="../scripts/stripe.js" defer></script>
+</html>

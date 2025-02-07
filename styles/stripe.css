@@ -1,0 +1,241 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+h1 {
+    margin-top: 20px; /* Space above the h1 */
+    color: #fff;
+}
+
+/* Product Section Styles */
+#product1,
+#product2 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #333;
+    background-color: #111;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#product1 img,
+#product2 img {
+    max-width: 250px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+#product1 h2,
+#product2 h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#product1 p,
+#product2 p {
+    color: #eee;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Select Dropdown Styles */
+select {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    border: 1px solid #555; /* Slightly lighter border */
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 15px; /* Add margin below the select */
+    appearance: none; /* remove default arrow */
+    -webkit-appearance: none; /* remove default arrow */
+    -moz-appearance: none; /* remove default arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='white' d='M7 10l5 5 5-5z'/%3e%3c/svg%3e"); /* add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; /* shift text to the left to avoid being hidden by the arrow */
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #777; /* Highlight border on focus */
+}
+
+#product1 button,
+#product2 button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#product1 button:hover,
+#product2 button:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+/* ... (rest of your CSS) */
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    #product1,
+    #product2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #product1 img,
+    #product2 img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #product1 p,
+    #product2 p {
+        text-align: center;
+    }
+}
+
+/* Columns */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    padding: 10px;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {  /* Example breakpoint */
+    .columns {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax as needed */
+    }
+
+    #product1,
+    #product2 {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    #product1 img,
+    #product2 img {
+        margin: 0 0 20px 0; /* Adjust margin */
+        max-width: 90%; /* Make images responsive */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) { /* Smaller screen breakpoint */
+    .columns {
+        grid-template-columns: 1fr; /* Single column layout on very small screens */
+    }
+    #product1,
+    #product2 {
+        width: 95%;
+    }
+}
+
+/* Ensure images are responsive within their containers */
+#product1 img,
+#product2 img {
+    max-width: 100%; /* Image should not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents some layout issues */
+}
+
+.product-container {
+    width: 60%; /* Adjust width as needed */
+    max-width: 800px; /* Set a maximum width */
+    margin: 30px auto; /* Center the container */
+    background-color: #1a1a1a; /* Slightly lighter background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px; /* Increased padding */
+    border-bottom: 1px solid #333;
+    background-color: #222; /* Slightly darker background for each product */
+    border-radius: 4px; /* Rounded corners for each product */
+    transition: background-color 0.3s ease; /* Hover effect */
+}
+
+.product:hover {
+    background-color: #2a2a2a;
+}
+
+.product p {
+    margin-right: 20px;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1em; /* Slightly larger font */
+    color: #eee; /* Lighter text color */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* Increased padding */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-controls button:hover {
+    background-color: #555;
+}
+
+.quantity-controls span {
+    margin: 0 15px; /* Increased margin */
+    font-size: 1.2em;
+    color: #ddd; /* Lighter text color */
+}
+
+.checkout-container {
+    margin-top: 30px;
+    text-align: center; /* Center the button */
+}

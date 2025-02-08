@@ -139,7 +139,7 @@ document.getElementById("checkout").addEventListener("click", () => {
         lineItems,
         mode: "payment",
         successUrl: "https://www.matai.moorfield.co.nz/shop/success",
-        cancelUrl: "https://www.matai.moorfield.co.nz/shop",
+        cancelUrl: "https://www.matai.moorfield.co.nz/shop"
     })
         .then(result => { /* ... */ })
         .catch(error => { /* ... */ });
@@ -161,3 +161,6 @@ function showCart() {
 document.getElementById("minimise").addEventListener("click", hideCart);
 
 document.getElementById("cart-toggle").addEventListener("click", showCart);
+
+const shippingAddressElement = checkout.createElement('address', {mode: 'shipping'});
+shippingAddressElement.mount('#shipping-address');

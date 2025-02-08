@@ -29,86 +29,7 @@ let itemDetails = {
     'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
 };
 
-function changeQuantity(item, change) {
-    itemQuantities[item] = Math.max(0, itemQuantities[item] + change);
-    document.getElementById(`${item}-quantity`).textContent = itemQuantities[item];
-}
-
-let cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Load cart from sessionStorage
-
-function addToCart(item) {
-    const { name, priceId, price } = itemDetails[item];
-    const quantityToAdd = itemQuantities[item];
-
-    const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
-
-    if (existingItemIndex > -1) {
-        cart[existingItemIndex].quantity += quantityToAdd;
-    } else {
-        cart.push({ name, quantity: quantityToAdd, priceId, price });
-    }
-
-    showCart(); // shows the div for the cart
-
-    itemQuantities[item] = 1;
-    document.getElementById(`${item}-quantity`).textContent = 1;
-
-    updateCartDisplay();
-    saveCart(); // Save cart to sessionStorage
-
-}
-
-function updateCartDisplay() {
-    const cartItemsList = document.getElementById('cart-items');
-    cartItemsList.innerHTML = '';
-
-    let total = 0;
-
-    cart.forEach(item => {
-        if (!['A3 Shipping', 'A4 Shipping', 'Small Shipping'].includes(item.name)) {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <span class="cart-item-details">${item.quantity} x ${item.name} - $${(item.quantity * item.price).toFixed(2)}</span>
-                <div class="cart-quantity-controls">
-                    <button onclick="updateCartItemQuantity('${item.name}', -1)">-</button>
-                    <span id="cart-${item.name}-quantity" class="quantity">${item.quantity}</span>
-                    <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button><p>&nbsp;</p>
-                    <button class="remove-item" onclick="removeItem('${item.name}')">🗑️</button> </div>
-            `;
-            cartItemsList.appendChild(listItem);
-            total += item.quantity * item.price;
-        }
-    });
-
-    document.getElementById('cart-total').textContent = `Total: $${total.toFixed(2)}`;
-}
-
-
-function updateCartItemQuantity(itemName, change) {
-    const itemIndex = cart.findIndex(item => item.name === itemName);
-    if (itemIndex > -1) {
-        cart[itemIndex].quantity = Math.max(0, cart[itemIndex].quantity + change);
-
-        if (cart[itemIndex].quantity === 0) {
-            cart.splice(itemIndex, 1);
-        }
-        updateCartDisplay();
-        saveCart();
-    }
-}
-
-function removeItem(itemName) {
-    const itemIndex = cart.findIndex(item => item.name === itemName);
-    if (itemIndex > -1) {
-        cart.splice(itemIndex, 1);
-        updateCartDisplay();
-        saveCart();
-    }
-}
-
-function saveCart() {
-    sessionStorage.setItem('cart', JSON.stringify(cart));
-}
+// ... (Your functions: changeQuantity, addToCart, updateCartDisplay, updateCartItemQuantity, removeItem, saveCart, hideCart, showCart)
 
 document.getElementById("checkout").addEventListener("click", () => {
     const lineItems = cart.map(item => ({
@@ -118,7 +39,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name));
 
     let shippingItemName = null;
 
@@ -136,22 +57,31 @@ document.getElementById("checkout").addEventListener("click", () => {
         });
     }
 
-    stripe.redirectToCheckout({
-        lineItems,
-        mode: "payment",
-        shipping_address_collection: {  // This is the essential part!
-            allowed_countries: ['NZ'], // Or any countries you want
+    fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
         },
-        shipping_options: [ // You may want to add shipping options too
-            {
-                shipping_rate: process.env.SHIPPING_RATE_ID
-            },
-        ],
-        successUrl: "https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}",
-        cancelUrl: "https://www.matai.moorfield.co.nz/shop",
+        body: JSON.stringify({ lineItems }),
     })
-        .then(result => { /* ... */ })
-        .catch(error => { /* ... */ });
+    .then(response => response.json())
+    .then(data => {
+        if (data.sessionId) {
+            stripe.redirectToCheckout({
+                sessionId: data.sessionId,
+            });
+        } else if (data.error) {
+            console.error("Stripe Checkout Error:", data.error);
+            alert("There was an error processing your checkout. Please try again later.");
+        } else {
+            console.error("Unexpected response from /create-checkout-session:", data);
+            alert("There was an unexpected error processing your checkout. Please try again later.");
+        }
+    })
+    .catch((error) => {
+        console.error('Fetch Error:', error);
+        alert("There was a network error. Please try again later.");
+    });
 });
 
 updateCartDisplay();

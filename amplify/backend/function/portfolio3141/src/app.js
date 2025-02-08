@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Correct: Access environment variable here
 const serverless = require('serverless-http');
-const shippingRateId = "shr_1Qq4onGBwEiJ8bR61YHrSXsS";
 
 app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
-    const { lineItems, shipping } = req.body;
+    const { lineItems } = req.body; // Get lineItems from the frontend request
 
     try {
         const session = await stripe.checkout.sessions.create({
@@ -19,30 +18,16 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             shipping_options: [
                 {
-                  shipping_rate: shippingRateId,
+                    shipping_rate: process.env.SHIPPING_RATE_ID, // Correct: Access environment variable here
                 },
             ],
             success_url: 'https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}',
             cancel_url: 'https://www.matai.moorfield.co.nz/shop',
         });
 
-        res.json({ sessionId: session.id });
+        res.json({ sessionId: session.id }); // Send the sessionId back to the frontend
     } catch (error) {
         console.error("Error creating Checkout Session:", error);
         res.status(500).json({ error: error.message });
     }
 });
-
-app.get('/checkout-session', async (req, res) => {
-    const { sessionId } = req.query;
-
-    try {
-        const session = await stripe.checkout.sessions.retrieve(sessionId);
-        res.json({ session });
-    } catch (error) {
-        console.error("Error retrieving Checkout Session:", error);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-exports.handler = serverless(app);

@@ -1,0 +1,78 @@
+{
+  "api": {
+    "portfolio3141": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "portfolio3141"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "portfolio": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "portfolio3141": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_portfolio3141_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio3141"
+        }
+      ]
+    },
+    "AMPLIFY_function_portfolio3141_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio3141"
+        }
+      ]
+    },
+    "AMPLIFY_function_portfolio3141_stripeSecretKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio3141"
+        }
+      ]
+    }
+  }
+}

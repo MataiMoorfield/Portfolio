@@ -24,9 +24,9 @@ let itemDetails = {
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     item8: { name: 'Postcard 2', priceId: "", price: 2.00 },
     item9: { name: 'Postcard 3', priceId: "", price: 2.00 },
-    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, 
-    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 }, 
-    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } 
+    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
+    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 },
+    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
 };
 
 function changeQuantity(item, change) {
@@ -111,106 +111,51 @@ function saveCart() {
 }
 
 document.getElementById("checkout").addEventListener("click", () => {
-    // 1. Collect Shipping Address:  Use a modal or form
-    const shippingDetails = new Promise((resolve, reject) => {
-        // Create a modal or use an existing form to collect address
-        const modal = document.createElement('div'); // Or use your existing modal
-        modal.id = 'shipping-modal';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <h2>Shipping Address</h2>
-                <form id="shipping-form">
-                    <input type="text" id="name" placeholder="Name" required><br>
-                    <input type="text" id="address1" placeholder="Address Line 1" required><br>
-                    <input type="text" id="address2" placeholder="Address Line 2 (Optional)"><br>
-                    <input type="text" id="city" placeholder="City" required><br>
-                    <input type="text" id="state" placeholder="State/Province" required><br>
-                    <input type="text" id="postal_code" placeholder="Postal Code" required><br>
-                    <input type="text" id="country" placeholder="Country" required><br> <br>
-                    <button type="submit">Continue</button>
-                    <button type="button" id="cancel-shipping">Cancel</button>
-                </form>
-            </div>
-        `;
-        document.body.appendChild(modal);
+    const lineItems = cart.map(item => ({
+        price: item.priceId,
+        quantity: item.quantity
+    }));
 
-        const form = document.getElementById('shipping-form');
-        const cancelBtn = document.getElementById('cancel-shipping')
+    // Shipping Logic (Prioritized)
+    const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const address = {
-                name: document.getElementById('name').value,
-                line1: document.getElementById('address1').value,
-                line2: document.getElementById('address2').value,
-                city: document.getElementById('city').value,
-                state: document.getElementById('state').value,
-                postal_code: document.getElementById('postal_code').value,
-                country: document.getElementById('country').value,
-            };
-            document.body.removeChild(modal); // Close the modal
-            resolve(address); // Resolve the promise with the address
+    let shippingItemName = null;
+
+    if (hasA3Item) {
+        shippingItemName = 'a3 shipping';
+    } else if (hasSmallItem) {
+        shippingItemName = 'small shipping';
+    }
+
+    if (shippingItemName) {
+        const shippingItem = itemDetails[shippingItemName];
+        lineItems.push({
+            price: shippingItem.priceId,
+            quantity: 1
         });
+    }
 
-        cancelBtn.addEventListener('click', (e) => {
-          document.body.removeChild(modal);
-          reject("Shipping address collection cancelled")
-        })
-
-    });
-
-    shippingDetails.then(address => { // Proceed with checkout AFTER getting address
-        const lineItems = cart.map(item => ({
-            price: item.priceId,
-            quantity: item.quantity
-        }));
-
-        // Shipping Logic (same as before)
-        const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
-        const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name));
-
-        let shippingItemName = null;
-
-        if (hasA3Item) {
-            shippingItemName = 'a3 shipping';
-        } else if (hasSmallItem) {
-            shippingItemName = 'small shipping';
-        }
-
-        if (shippingItemName) {
-            const shippingItem = itemDetails[shippingItemName];
-            lineItems.push({
-                price: shippingItem.priceId,
-                quantity: 1
-            });
-        }
-
-        stripe.redirectToCheckout({
-            lineItems,
-            mode: "payment",
-            successUrl: "https://www.matai.moorfield.co.nz/shop/success",
-            cancelUrl: "https://www.matai.moorfield.co.nz/shop",
-            shipping_address_collection: {
-                allowed_countries: ['NZ', 'AU', 'US', 'CA', 'GB'], // Specify allowed countries
-            },
-        })
-            .then(result => { /* ... */ })
-            .catch(error => { /* ... */ });
-
-    }).catch(error => {
-      console.log(error)
+    stripe.redirectToCheckout({
+        lineItems,
+        mode: "payment",
+        successUrl: "https://www.matai.moorfield.co.nz/shop/success",
+        cancelUrl: "https://www.matai.moorfield.co.nz/shop",
     })
+        .then(result => { /* ... */ })
+        .catch(error => { /* ... */ });
 });
+
 updateCartDisplay();
 
 function hideCart() {
     document.getElementById("cart-toggle").style.display = "block";
     document.getElementById("cart-toggle").style.opacity = 1;
-    document.getElementById("cart").style.bottom="-100%";
+    document.getElementById("cart").style.bottom = "-100%";
 }
 
 function showCart() {
-    document.getElementById("cart").style.bottom="0%";
+    document.getElementById("cart").style.bottom = "0%";
     document.getElementById("cart-toggle").style.opacity = 0;
     setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
 }

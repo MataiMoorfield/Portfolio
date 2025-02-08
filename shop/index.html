@@ -6,153 +6,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Matai Moorfield</title>
     <link rel="stylesheet" href="../styles/style.css">
-<link rel="stylesheet" href="../styles/animations.css">
-<link rel="stylesheet" href="../styles/loading.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/loading.css">
     <link rel="stylesheet" href="../styles/nav.css">
-<link rel="stylesheet" href="../styles/stripe.css">
+    <link rel="stylesheet" href="../styles/stripe.css">
 
 </head>
 <div id="loading-screen">
     <div class="spinner"></div>
 </div>
+
 <body>
     <div id="content" style="animation: fadeInAnimation ease 4s;">
         <div class="nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul>
                 <a href="../" itemprop="url" aria-label="Back to home">Home</a>
+                <a href="#a3prints" itemprop="url" aria-label="a3 prints">A3 Prints</a>
             </ul>
         </div>
         <h1>Shop</h1>
         <br>
-    <h2 id="a3prints">A3 Prints</h2>
-    <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available upon request.</p>
-    <div class="columns">
-        <div class="column">
-            <img src="../Images/Tui 1.jpg">
-            <p>Tui</p>
-            <p>Native New Zealand Tui amongst the flax</p>
-            <div class="product">
-                <button onclick="changeQuantity('item1', -1)">-</button>
-                <span id="item1-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item1', 1)">+</button>
-                <button onclick="addToCart('item1')">Add to Cart</button>
+        <h2 id="a3prints">A3 Prints</h2>
+        <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available
+            upon request.</p>
+        <div class="columns">
+            <div class="column">
+                <img src="../Images/Tui 1.jpg">
+                <p>Tui</p>
+                <p>Native New Zealand Tui amongst the flax</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item1', -1)">-</button>
+                    <span id="item1-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item1', 1)">+</button>
+                    <button onclick="addToCart('item1')">Add to Cart</button>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <img src="../Images/Fine art/Pied shag.jpg">
-            <p>Pied Shags</p>
-            <p>Native Pied Shags fighting</p>
-            <div class="product">
-                <button onclick="changeQuantity('item2', -1)">-</button>
-                <span id="item2-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item2', 1)">+</button>
-                <button onclick="addToCart('item2')">Add to Cart</button>
+            <div class="column">
+                <img src="../Images/Fine art/Pied shag.jpg">
+                <p>Pied Shags</p>
+                <p>Native Pied Shags fighting</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item2', -1)">-</button>
+                    <span id="item2-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item2', 1)">+</button>
+                    <button onclick="addToCart('item2')">Add to Cart</button>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <img src="../Images/Tui 2.jpg">
-            <p>Black Tui</p>
-            <p>A Tui eating from a flax flower</p>
-            <div class="product">
-                <i><b>Coming soon!</b></i>
-                <!--<button onclick="changeQuantity('item3', -1)">-</button>
+            <div class="column">
+                <img src="../Images/Tui 2.jpg">
+                <p>Black Tui</p>
+                <p>A Tui eating from a flax flower</p>
+                <div class="product">
+                    <i><b>Coming soon!</b></i>
+                    <!--<button onclick="changeQuantity('item3', -1)">-</button>
                 <span id="item3-quantity" class="quantity">1</span>
                 <button onclick="changeQuantity('item3', 1)">+</button>
                 <button onclick="addToCart('item3')">Add to Cart</button>-->
+                </div>
             </div>
+        </div>
+
+        <h2>Cards</h2>
+        <p style="color: white;">A beautiful greeting card featuring an exotic bird. 10x17cm card - includes an
+            envelope.</p>
+        <div class="columns">
+            <div class="column">
+                <img src="../Images/Shop/pied shag card.jpg">
+                <p>Pied Shag</p>
+                <p>A black-and-white cormorant found in coastal waters.</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item4', -1)">-</button>
+                    <span id="item4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item4', 1)">+</button>
+                    <button onclick="addToCart('item4')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/Gannet card.jpg">
+                <p>Gannet</p>
+                <p>A large seabird that dives for fish from great heights.</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item5', -1)">-</button>
+                    <span id="item5-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item5', 1)">+</button>
+                    <button onclick="addToCart('item5')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/dotterel card.jpg">
+                <p>Dotterel</p>
+                <p>A small endangered shorebird found on beaches and riverbeds.</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item6', -1)">-</button>
+                    <span id="item6-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item6', 1)">+</button>
+                    <button onclick="addToCart('item6')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Postcards</h2>
+        <p style="color: white;">An A6 postcard featuring a photograph of a native New Zealand bird.</p>
+        <div class="columns">
+            <div class="column">
+                <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
+                <p>Postcard</p>
+                <p>Pied Shags fighting</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item7', -1)">-</button>
+                    <span id="item7-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item7', 1)">+</button>
+                    <button onclick="addToCart('item7')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
+                <p>Postcard<br>Pied Shags fighting</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item8', -1)">-</button>
+                    <span id="item8-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item8', 1)">+</button>
+                    <button onclick="addToCart('item8')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
+                <p>Postcard<br>Pied Shags fighting</p>
+                <div class="product">
+                    <button onclick="changeQuantity('item9', -1)">-</button>
+                    <span id="item9-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('item9', 1)">+</button>
+                    <button onclick="addToCart('item9')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>
+        <div id="cart">
+            <h2>Cart</h2>
+            <ul id="cart-items">
+            </ul>
+            <p id="cart-total">Total: $0.00</p>
+            <button id="checkout">Checkout</button>
         </div>
     </div>
 
-    <h2>Cards</h2>
-    <p style="color: white;">A beautiful greeting card featuring an exotic bird. 10x17cm card - includes an envelope.</p>
-    <div class="columns">
-        <div class="column">
-            <img src="../Images/Shop/pied shag card.jpg">
-            <p>Pied Shag</p>
-            <p>A black-and-white cormorant found in coastal waters.</p>
-            <div class="product">
-                <button onclick="changeQuantity('item4', -1)">-</button>
-                <span id="item4-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item4', 1)">+</button>
-                <button onclick="addToCart('item4')">Add to Cart</button>
-            </div>
-        </div>
-        <div class="column">
-            <img src="../Images/Shop/Gannet card.jpg">
-            <p>Gannet</p>
-            <p>A large seabird that dives for fish from great heights.</p>
-            <div class="product">
-                <button onclick="changeQuantity('item5', -1)">-</button>
-                <span id="item5-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item5', 1)">+</button>
-                <button onclick="addToCart('item5')">Add to Cart</button>
-            </div>
-        </div>
-        <div class="column">
-            <img src="../Images/Shop/dotterel card.jpg">
-            <p>Dotterel</p>
-            <p>A small endangered shorebird found on beaches and riverbeds.</p>
-            <div class="product">
-                <button onclick="changeQuantity('item6', -1)">-</button>
-                <span id="item6-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item6', 1)">+</button>
-                <button onclick="addToCart('item6')">Add to Cart</button>
-            </div>
-        </div>
     </div>
-
-    <h2>Postcards</h2>
-    <p style="color: white;">An A6 postcard featuring a photograph of a native New Zealand bird.</p>
-    <div class="columns">
-        <div class="column">
-            <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-            <p>Postcard</p>
-            <p>Pied Shags fighting</p>
-            <div class="product">
-                <button onclick="changeQuantity('item7', -1)">-</button>
-                <span id="item7-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item7', 1)">+</button>
-                <button onclick="addToCart('item7')">Add to Cart</button>
-            </div>
-        </div>
-        <div class="column">
-            <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-            <p>Postcard<br>Pied Shags fighting</p>
-            <div class="product">
-                <button onclick="changeQuantity('item8', -1)">-</button>
-                <span id="item8-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item8', 1)">+</button>
-                <button onclick="addToCart('item8')">Add to Cart</button>
-            </div>
-        </div>
-        <div class="column">
-            <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-            <p>Postcard<br>Pied Shags fighting</p>
-            <div class="product">
-                <button onclick="changeQuantity('item9', -1)">-</button>
-                <span id="item9-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('item9', 1)">+</button>
-                <button onclick="addToCart('item9')">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br>
-    <div id="cart">
-        <h2>Cart</h2>
-        <ul id="cart-items">
-        </ul>
-        <p id="cart-total">Total: $0.00</p>
-        <button id="checkout">Checkout</button>
-    </div>
-    </div>
-
-</div>
-
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://js.stripe.com/v3"></script>
     <script src="../scripts/stripe.js"></script>
-<script src="../scripts/loading.js"></script>
+    <script src="../scripts/loading.js"></script>
 </body>
 
 </html>

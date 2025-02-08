@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const serverless = require('serverless-http');
+const shippingRateId = "shr_1Qq4onGBwEiJ8bR61YHrSXsS";
 
 app.use(express.json());
 
@@ -18,7 +19,7 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             shipping_options: [
                 {
-                    shipping_rate: process.env.SHIPPING_RATE_ID
+                  shipping_rate: shippingRateId,
                 },
             ],
             success_url: 'https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}',

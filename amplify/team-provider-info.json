@@ -15,9 +15,9 @@
     "categories": {
       "function": {
         "portfolio3141": {
-          "stripeSecretKey": "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",
           "deploymentBucketName": "amplify-portfolio-dev-c64e1-deployment",
-          "s3Key": "amplify-builds/portfolio3141-7466645637754c41704d-build.zip"
+          "s3Key": "amplify-builds/portfolio3141-4165727057496c343954-build.zip",
+          "stripeSecretKey": "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"
         }
       },
       "auth": {

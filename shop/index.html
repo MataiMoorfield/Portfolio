@@ -4,199 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1,
-        h2 {
-            text-align: center;
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.2em;
-            padding: 20px 20px;
-        }
+    <title>Shop - Matai Moorfield</title>
+    <link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/animations.css">
+<link rel="stylesheet" href="../styles/loading.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+<link rel="stylesheet" href="../styles/stripe.css">
 
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            /* Light background */
-            color: #333;
-            /* Dark text */
-        }
-
-        .columns {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            /* Adjusted minmax */
-            gap: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            /* Centered with margin */
-            padding: 20px;
-        }
-
-        .column {
-            background-color: rgb(255, 255, 255);
-            border-radius: 8px;
-            /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            /* Subtle shadow */
-            padding: 20px;
-            text-align: center;
-            /* Center content within columns */
-        }
-
-        .column img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            object-fit: cover;
-            /* Maintain aspect ratio and cover container */
-        }
-
-        .column p {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Center the buttons and quantity */
-            margin-top: 15px;
-        }
-
-        .product button {
-            background-color: #000000;
-            /* Blue buttons */
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-            transition: background-color 0.3s;
-            /* Smooth transition on hover */
-        }
-
-        .product button:hover {
-            background-color: #000000;
-            /* Darker blue on hover */
-        }
-
-        .quantity {
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        #cart {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            /* White cart background */
-            border-top: 1px solid #ddd;
-            /* Subtle border */
-            padding: 20px;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            /* Shadow on top */
-            z-index: 100;
-            /* Ensure cart is on top */
-        }
-
-        #cart h2 {
-            margin-bottom: 10px;
-            color: #000000;
-        }
-
-        #cart-items {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 15px;
-        }
-
-        #cart-items li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            /* Add padding below each item */
-            border-bottom: 1px solid #eee;
-            /* Add a separator line */
-            padding-right: 30px;
-        }
-
-        .cart-item-details {
-            flex-grow: 1;
-        }
-
-        .cart-quantity-controls {
-            display: flex;
-            align-items: center;
-        }
-
-        .cart-quantity-controls button {
-            background-color: #eee;
-            /* Light gray buttons in cart */
-            color: #333;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            margin: 0 3px;
-        }
-
-        #cart-total {
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: right;
-            padding-right: 30px;
-        }
-
-        #checkout {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 95%;
-            /* Full width checkout button */
-            transition: background-color 0.3s;
-        }
-
-        #checkout:hover {
-            background-color: #0056b3;
-        }
-
-        hr {
-            border: 1px solid #ccc;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-
-        p {
-            padding-left: 20px;
-            padding-right: 20px;
-            text-align: center;
-            color: #000000;
-        }
-    </style>
 </head>
-
+<div id="loading-screen">
+    <div class="spinner"></div>
+</div>
 <body>
-
-    <h1>A3 Prints</h1>
+    <div id="content" style="animation: fadeInAnimation ease 4s;">
+        <div class="nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <ul>
+                <a href="../" itemprop="url" aria-label="Back to home">Home</a>
+            </ul>
+        </div>
+        <h1>Shop</h1>
+        <br>
+    <h2 id="a3prints">A3 Prints</h2>
+    <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available upon request.</p>
     <div class="columns">
         <div class="column">
             <img src="../Images/Tui 1.jpg">
-            <p><b>Tui</b><br>Native New Zealand Tui amongst the flax</p>
+            <p>Tui</p>
+            <p>Native New Zealand Tui amongst the flax</p>
             <div class="product">
                 <button onclick="changeQuantity('item1', -1)">-</button>
                 <span id="item1-quantity" class="quantity">1</span>
@@ -206,7 +40,8 @@
         </div>
         <div class="column">
             <img src="../Images/Fine art/Pied shag.jpg">
-            <p><b>Pied Shags</b><br>Native Pied Shags fighting</p>
+            <p>Pied Shags</p>
+            <p>Native Pied Shags fighting</p>
             <div class="product">
                 <button onclick="changeQuantity('item2', -1)">-</button>
                 <span id="item2-quantity" class="quantity">1</span>
@@ -216,7 +51,8 @@
         </div>
         <div class="column">
             <img src="../Images/Tui 2.jpg">
-            <p><b>Black Tui</b><br>A Tui eating from a flax flower</p>
+            <p>Black Tui</p>
+            <p>A Tui eating from a flax flower</p>
             <div class="product">
                 <i><b>Coming soon!</b></i>
                 <!--<button onclick="changeQuantity('item3', -1)">-</button>
@@ -226,15 +62,14 @@
             </div>
         </div>
     </div>
-    <hr>
 
-
-    <h1>Cards</h1>
-    <p>A beautiful greeting card featuring an exotic bird. 10x17cm card - includes an envelope.</p>
+    <h2>Cards</h2>
+    <p style="color: white;">A beautiful greeting card featuring an exotic bird. 10x17cm card - includes an envelope.</p>
     <div class="columns">
         <div class="column">
             <img src="../Images/Shop/pied shag card.jpg">
-            <p>Pied Shag<br>A native new zealand sea bird</p>
+            <p>Pied Shag</p>
+            <p>A black-and-white cormorant found in coastal waters.</p>
             <div class="product">
                 <button onclick="changeQuantity('item4', -1)">-</button>
                 <span id="item4-quantity" class="quantity">1</span>
@@ -244,7 +79,8 @@
         </div>
         <div class="column">
             <img src="../Images/Shop/Gannet card.jpg">
-            <p>Gannet<br>A large seabird </p>
+            <p>Gannet</p>
+            <p>A large seabird that dives for fish from great heights.</p>
             <div class="product">
                 <button onclick="changeQuantity('item5', -1)">-</button>
                 <span id="item5-quantity" class="quantity">1</span>
@@ -254,7 +90,8 @@
         </div>
         <div class="column">
             <img src="../Images/Shop/dotterel card.jpg">
-            <p>Greeting Card<br>Endangered New Zeaalnd coast bird</p>
+            <p>Dotterel</p>
+            <p>A small endangered shorebird found on beaches and riverbeds.</p>
             <div class="product">
                 <button onclick="changeQuantity('item6', -1)">-</button>
                 <span id="item6-quantity" class="quantity">1</span>
@@ -263,12 +100,14 @@
             </div>
         </div>
     </div>
-    <hr>
-    <h1>Postcards</h1>
+
+    <h2>Postcards</h2>
+    <p style="color: white;">An A6 postcard featuring a photograph of a native New Zealand bird.</p>
     <div class="columns">
         <div class="column">
             <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-            <p>Postcard<br>Pied Shags fighting</p>
+            <p>Postcard</p>
+            <p>Pied Shags fighting</p>
             <div class="product">
                 <button onclick="changeQuantity('item7', -1)">-</button>
                 <span id="item7-quantity" class="quantity">1</span>
@@ -309,11 +148,11 @@
     </div>
     </div>
 
-
+</div>
 
     <script src="https://js.stripe.com/v3"></script>
     <script src="../scripts/stripe.js"></script>
-
+<script src="../scripts/loading.js"></script>
 </body>
 
 </html>

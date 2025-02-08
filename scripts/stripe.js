@@ -100,19 +100,6 @@ document.getElementById("checkout").addEventListener("click", () => {
     stripe.redirectToCheckout({
         lineItems,
         mode: "payment",
-        shipping_options: [ // Array of shipping options
-            {
-                shipping_rate: 'shr_1Qq4m7GBwEiJ8bR6VpfJux1w', // Replace with your actual shipping rate ID
-                // OR, if you want to use calculated rates (more complex):
-                // delivery_estimate: {
-                //   minimum: { unit: 'business_day', value: 5 },
-                //   maximum: { unit: 'business_day', value: 7 },
-                // },
-                // displayName: 'Standard Shipping', // Optional display name
-                // type: 'fixed_amount', // Optional type, usually 'fixed_amount'
-            }
-            
-        ],
         successUrl: "https://www.matai.moorfield.co.nz/shop/success",
         cancelUrl: "https://www.matai.moorfield.co.nz/shop",
     })

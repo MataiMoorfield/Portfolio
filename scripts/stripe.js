@@ -24,9 +24,9 @@ let itemDetails = {
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     item8: { name: 'Postcard 2', priceId: "", price: 2.00 },
     item9: { name: 'Postcard 3', priceId: "", price: 2.00 },
-    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
-    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 },
-    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
+    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, 
+    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 }, 
+    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } 
 };
 
 function changeQuantity(item, change) {
@@ -119,7 +119,7 @@ document.getElementById("checkout").addEventListener("click", () => {
     // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
-
+    
     let shippingItemName = null;
 
     if (hasA3Item) {
@@ -139,15 +139,7 @@ document.getElementById("checkout").addEventListener("click", () => {
     stripe.redirectToCheckout({
         lineItems,
         mode: "payment",
-        shipping_address_collection: {
-            allowed_countries: ['NZ', 'AU', 'US', 'CA', 'GB'],
-        },
-        shipping_options: [
-            {
-                shipping_rate: process.env.SHIPPING_RATE_ID
-            },
-        ],
-        successUrl: "https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}", // Correct!
+        successUrl: "https://www.matai.moorfield.co.nz/shop/success",
         cancelUrl: "https://www.matai.moorfield.co.nz/shop",
     })
         .then(result => { /* ... */ })
@@ -159,11 +151,11 @@ updateCartDisplay();
 function hideCart() {
     document.getElementById("cart-toggle").style.display = "block";
     document.getElementById("cart-toggle").style.opacity = 1;
-    document.getElementById("cart").style.bottom = "-100%";
+    document.getElementById("cart").style.bottom="-100%";
 }
 
 function showCart() {
-    document.getElementById("cart").style.bottom = "0%";
+    document.getElementById("cart").style.bottom="0%";
     document.getElementById("cart-toggle").style.opacity = 0;
     setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
 }

@@ -27,7 +27,6 @@ window.addEventListener('load', function() {
         images.forEach(function(image) {
             image.addEventListener('load', checkImagesLoaded);
 
-            // Check if image is already loaded (in case it comes from cache)
             if (image.complete) {
                 checkImagesLoaded();
             }
@@ -42,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                gallery.classList.add("active"); // Add 'active' class when it appears
-                observer.unobserve(about); // Stop observing after fade-in
+                gallery.classList.add("active");
+                observer.unobserve(about);
             }
         });
     }, { threshold: 0.3 });

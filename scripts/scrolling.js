@@ -1,4 +1,3 @@
-// Smooth Scroll
 var scroll = new SmoothScroll('a[href*="#"]', {
     speed: 300,
     speedAsDuration: true,
@@ -21,7 +20,6 @@ document.querySelectorAll('a[href*="#"]').forEach((link) => {
     });
 });
 
-// Ensure proper scrolling after page load
 window.onload = function () {
     setTimeout(() => {
         const hash = window.location.hash.substring(1);

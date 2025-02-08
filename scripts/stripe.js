@@ -117,16 +117,13 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'A3 Print 3'].includes(item.name));
-    const hasA4Item = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name)); // Updated to include item4-6
 
     let shippingItemName = null;
 
     if (hasA3Item) {
         shippingItemName = 'a3 shipping';
-    } else if (hasA4Item) {
-        shippingItemName = 'a4 shipping';
-    } else if (hasSmallItem) {
+    } else if (hasSmallItem) { // Now checks for small items
         shippingItemName = 'small shipping';
     }
 

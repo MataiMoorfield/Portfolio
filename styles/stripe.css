@@ -87,6 +87,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
+    right: 0;
     width: 100%;
     background-color: #fff;
     /* White cart background */
@@ -96,9 +97,39 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     /* Shadow on top */
     z-index: 100;
+    transition: all 0.5s ease-in;
     /* Ensure cart is on top */
 }
-
+#cart-toggle {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: white;
+    padding: 5px;
+    padding-bottom: 0px;
+    border: 1px black solid;
+    cursor: pointer;
+    transition: opacity 0.5s ease-out, transform 1s ease-out;
+    opacity: 0;
+}
+#cart-toggle:hover {
+    transform: scale(1.5);
+}
+#cart-toggle img {
+    width: 20px;
+    left: -1px;
+    position: relative;
+}
+#minimise {
+    margin: 0;
+    float: right;
+    margin-right: 3%;
+    width: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    display: block;
+    text-align: right;
+}
 #cart h2 {
     margin-bottom: 10px;
     color: #000000;
@@ -146,7 +177,6 @@ body {
     font-weight: bold;
     margin-bottom: 15px;
     text-align: right;
-    padding-right: 30px;
 }
 
 #checkout {
@@ -154,10 +184,12 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
-    width: 96%;
+    width: 20%;
+    left: 40%;
+    position: relative;
+    display: inline-block;
     /* Full width checkout button */
     transition: background-color 0.3s;
 }

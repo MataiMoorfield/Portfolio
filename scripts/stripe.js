@@ -48,11 +48,14 @@ function addToCart(item) {
         cart.push({ name, quantity: quantityToAdd, priceId, price });
     }
 
+    showCart(); // shows the div for the cart
+
     itemQuantities[item] = 1;
     document.getElementById(`${item}-quantity`).textContent = 1;
 
     updateCartDisplay();
     saveCart(); // Save cart to sessionStorage
+
 }
 
 function updateCartDisplay() {
@@ -145,3 +148,18 @@ document.getElementById("checkout").addEventListener("click", () => {
 });
 
 updateCartDisplay(); // Initialize cart display on page load.
+
+function hideCart() {
+    document.getElementById("cart-toggle").style.display = "block";
+    document.getElementById("cart-toggle").style.opacity = 1;
+    document.getElementById("cart").style.bottom="-100%";
+}
+
+function showCart() {
+    document.getElementById("cart").style.bottom="0%";
+    document.getElementById("cart-toggle").style.opacity = 0;
+    setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
+}
+document.getElementById("minimise").addEventListener("click", hideCart);
+
+document.getElementById("cart-toggle").addEventListener("click", showCart);

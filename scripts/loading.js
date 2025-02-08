@@ -1,4 +1,3 @@
-// Loading
 window.addEventListener('load', function() {
     const images = document.querySelectorAll('img');
     let loadedImages = 0;
@@ -34,7 +33,6 @@ window.addEventListener('load', function() {
     }
 });
 
-// Gallery fade in
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.querySelector(".fade-in");
 

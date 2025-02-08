@@ -66,7 +66,6 @@ function updateCartDisplay() {
     let total = 0;
 
     cart.forEach(item => {
-        // Exclude shipping items from the cart display:
         if (!['A3 Shipping', 'A4 Shipping', 'Small Shipping'].includes(item.name)) {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
@@ -119,8 +118,8 @@ document.getElementById("checkout").addEventListener("click", () => {
     }));
 
     // Shipping Logic (Prioritized)
-    const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'A3 Print 3'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name)); // Updated to include piedshag-6
+    const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
     
     let shippingItemName = null;
 

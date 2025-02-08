@@ -11,6 +11,7 @@ let itemQuantities = {
     dotterelcard: 1,
     piedshagscard: 1,
     blueduckcard: 1,
+    item9: 1
 };
 
 let itemDetails = {

@@ -65,8 +65,8 @@ function updateCartDisplay() {
             <div class="cart-quantity-controls">
                 <button onclick="updateCartItemQuantity('${item.name}', -1)">-</button>
                 <span id="cart-${item.name}-quantity" class="quantity">${item.quantity}</span>
-                <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button>
-            </div>
+                <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button><p>&nbsp;</p>
+                <button class="remove-item" onclick="removeItem('${item.name}')">🗑️</button> </div>
         `;
         cartItemsList.appendChild(listItem);
         total += item.quantity * item.price;
@@ -84,7 +84,16 @@ function updateCartItemQuantity(itemName, change) {
             cart.splice(itemIndex, 1);
         }
         updateCartDisplay();
-        saveCart(); // Save cart to sessionStorage
+        saveCart();
+    }
+}
+
+function removeItem(itemName) {
+    const itemIndex = cart.findIndex(item => item.name === itemName);
+    if (itemIndex > -1) {
+        cart.splice(itemIndex, 1);
+        updateCartDisplay();
+        saveCart();
     }
 }
 

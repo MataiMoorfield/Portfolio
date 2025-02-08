@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/shop.css">
+
+</head>
+
+<body>
+    <h1>Shop</h1>
+    <p>Thank you for your purchase! Your support helps me develop my skills and gear 😊</p>
+    <br><br>
+    <div class="checkout-container">
+        <a href="https://www.matai.moorfield.co.nz" class="checkout-button" itemprop="url">Back Home</a>
+    </div>
+    <br>
+    <script src="/scripts/stripe.js"></script>
+    <script>
+        sessionStorage.removeItem('cart');
+    </script>
+</body>
+
+</html>

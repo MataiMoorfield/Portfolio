@@ -34,7 +34,7 @@ function changeQuantity(item, change) {
     document.getElementById(`${item}-quantity`).textContent = itemQuantities[item];
 }
 
-let cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Load cart from sessionStorage
+let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 function addToCart(item) {
     const { name, priceId, price } = itemDetails[item];
@@ -48,13 +48,13 @@ function addToCart(item) {
         cart.push({ name, quantity: quantityToAdd, priceId, price });
     }
 
-    showCart(); // shows the div for the cart
+    showCart();
 
     itemQuantities[item] = 1;
     document.getElementById(`${item}-quantity`).textContent = 1;
 
     updateCartDisplay();
-    saveCart(); // Save cart to sessionStorage
+    saveCart();
 
 }
 
@@ -116,7 +116,6 @@ document.getElementById("checkout").addEventListener("click", () => {
         quantity: item.quantity
     }));
 
-    // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
     

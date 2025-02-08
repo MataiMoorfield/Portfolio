@@ -1,4 +1,3 @@
-// Loading
 window.addEventListener('load', function() {
     const images = document.querySelectorAll('img');
     let loadedImages = 0;
@@ -27,7 +26,6 @@ window.addEventListener('load', function() {
         images.forEach(function(image) {
             image.addEventListener('load', checkImagesLoaded);
 
-            // Check if image is already loaded (in case it comes from cache)
             if (image.complete) {
                 checkImagesLoaded();
             }
@@ -35,15 +33,14 @@ window.addEventListener('load', function() {
     }
 });
 
-// Gallery fade in
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.querySelector(".fade-in");
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                gallery.classList.add("active"); // Add 'active' class when it appears
-                observer.unobserve(about); // Stop observing after fade-in
+                gallery.classList.add("active");
+                observer.unobserve(about);
             }
         });
     }, { threshold: 0.3 });

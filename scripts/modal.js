@@ -1,8 +1,6 @@
-
-// Modal Image Viewer
 const modal = document.createElement("div");
 modal.className = "modal";
-modal.innerHTML = '<span class="modal-close">×</span><img class="modal-content">';
+modal.innerHTML = '<span class="modal-close">x</span><img class="modal-content">';
 document.body.appendChild(modal);
 
 const modalContent = modal.querySelector(".modal-content");

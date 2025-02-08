@@ -172,8 +172,7 @@ hr {
     max-width: 1200px;
 }
 
-b,
-p {
+b, p, i {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;

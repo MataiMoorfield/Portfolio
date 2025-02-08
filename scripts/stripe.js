@@ -24,6 +24,10 @@ let itemDetails = {
     item7: { name: 'Postcard 1', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
     item8: { name: 'Postcard 2', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
     item9: { name: 'Postcard 3', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
+    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, // Replace with your actual price ID
+    'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 }, // Replace with your actual price ID
+    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } // Replace with your actual price ID
+
 };
 
 function changeQuantity(item, change) {
@@ -59,21 +63,25 @@ function updateCartDisplay() {
     let total = 0;
 
     cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <span class="cart-item-details">${item.quantity} x ${item.name} - $${(item.quantity * item.price).toFixed(2)}</span>
-            <div class="cart-quantity-controls">
-                <button onclick="updateCartItemQuantity('${item.name}', -1)">-</button>
-                <span id="cart-${item.name}-quantity" class="quantity">${item.quantity}</span>
-                <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button><p>&nbsp;</p>
-                <button class="remove-item" onclick="removeItem('${item.name}')">🗑️</button> </div>
-        `;
-        cartItemsList.appendChild(listItem);
-        total += item.quantity * item.price;
+        // Exclude shipping items from the cart display:
+        if (!['A3 Shipping', 'A4 Shipping', 'Small Shipping'].includes(item.name)) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <span class="cart-item-details">${item.quantity} x ${item.name} - $${(item.quantity * item.price).toFixed(2)}</span>
+                <div class="cart-quantity-controls">
+                    <button onclick="updateCartItemQuantity('${item.name}', -1)">-</button>
+                    <span id="cart-${item.name}-quantity" class="quantity">${item.quantity}</span>
+                    <button onclick="updateCartItemQuantity('${item.name}', 1)">+</button><p>&nbsp;</p>
+                    <button class="remove-item" onclick="removeItem('${item.name}')">🗑️</button> </div>
+            `;
+            cartItemsList.appendChild(listItem);
+            total += item.quantity * item.price;
+        }
     });
 
     document.getElementById('cart-total').textContent = `Total: $${total.toFixed(2)}`;
 }
+
 
 function updateCartItemQuantity(itemName, change) {
     const itemIndex = cart.findIndex(item => item.name === itemName);
@@ -107,22 +115,37 @@ document.getElementById("checkout").addEventListener("click", () => {
         quantity: item.quantity
     }));
 
+    // Shipping Logic (Prioritized)
+    const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'A3 Print 3'].includes(item.name));
+    const hasA4Item = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name));
+
+    let shippingItemName = null;
+
+    if (hasA3Item) {
+        shippingItemName = 'a3 shipping';
+    } else if (hasA4Item) {
+        shippingItemName = 'a4 shipping';
+    } else if (hasSmallItem) {
+        shippingItemName = 'small shipping';
+    }
+
+    if (shippingItemName) {
+        const shippingItem = itemDetails[shippingItemName];
+        lineItems.push({
+            price: shippingItem.priceId,
+            quantity: 1
+        });
+    }
+
     stripe.redirectToCheckout({
         lineItems,
         mode: "payment",
         successUrl: "https://www.matai.moorfield.co.nz/shop/success",
         cancelUrl: "https://www.matai.moorfield.co.nz/shop",
     })
-        .then(result => {
-            if (result.error) {
-                console.error("Stripe error:", result.error);
-                alert(result.error.message);
-            }
-        })
-        .catch(error => {
-            console.error("Checkout error:", error);
-            alert("An error occurred during checkout.");
-        });
+        .then(result => { /* ... */ })
+        .catch(error => { /* ... */ });
 });
 
 updateCartDisplay(); // Initialize cart display on page load.

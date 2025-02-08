@@ -3,30 +3,31 @@ const stripe = Stripe(
 );
 
 let itemQuantities = {
-    item1: 1,
-    item2: 1,
-    item3: 1,
-    item4: 1,
-    item5: 1,
-    item6: 1,
-    item7: 1,
-    item8: 1,
+    tuia3: 1,
+    piedshagsa3: 1,
+    blacktuia3: 1,
+    piedshagcard: 1,
+    gannetcard: 1,
+    dotterelcard: 1,
+    piedshagscard: 1,
+    blueduckcard: 1,
     item9: 1
 };
 
 let itemDetails = {
-    item1: { name: 'Tui - A3 Print', priceId: "price_1QpzJ3GBwEiJ8bR60HffPhkk", price: 40.00 },
-    item2: { name: 'Fighting Pied Shags - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
-    item3: { name: 'A3 Print 3', priceId: "price_1QnwfnGBwEiJ8bR6uPiVpqy1", price: 40.00 },
-    item4: { name: 'Pied Shag - Greeting Card', priceId: "price_1Qq4YrGBwEiJ8bR63EO5WSxX", price: 4.00 },
-    item5: { name: 'Gannet - Greeting Card', priceId: "price_1Qq4a7GBwEiJ8bR6afbCSVWM", price: 4.00 },
-    item6: { name: 'Dotterel - Greeting Card', priceId: "price_1Qq4avGBwEiJ8bR6gFxpfdHt", price: 4.00 },
-    item7: { name: 'Postcard 1', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
+    tuia3: { name: 'Tui - A3 Print', priceId: "price_1QpzJ3GBwEiJ8bR60HffPhkk", price: 40.00 },
+    piedshagsa3: { name: 'Fighting Pied Shags - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
+    blacktuia3: { name: 'Black Tui - A3 Print 3', priceId: "price_1QnwfnGBwEiJ8bR6uPiVpqy1", price: 40.00 },
+    piedshagcard: { name: 'Pied Shag - Greeting Card', priceId: "price_1Qq4YrGBwEiJ8bR63EO5WSxX", price: 4.00 },
+    gannetcard: { name: 'Gannet - Greeting Card', priceId: "price_1Qq4a7GBwEiJ8bR6afbCSVWM", price: 4.00 },
+    dotterelcard: { name: 'Dotterel - Greeting Card', priceId: "price_1Qq4avGBwEiJ8bR6gFxpfdHt", price: 4.00 },
+    piedshagscard: { name: 'Pied Shags screaming - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
+    blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     item8: { name: 'Postcard 2', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
     item9: { name: 'Postcard 3', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
-    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, // Replace with your actual price ID
-    'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 }, // Replace with your actual price ID
-    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } // Replace with your actual price ID
+    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, 
+    'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 }, 
+    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } 
 };
 
 function changeQuantity(item, change) {
@@ -119,13 +120,13 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'A3 Print 3'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name)); // Updated to include item4-6
-
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Postcard 1', 'Postcard 2', 'Postcard 3'].includes(item.name)); // Updated to include piedshag-6
+    
     let shippingItemName = null;
 
     if (hasA3Item) {
         shippingItemName = 'a3 shipping';
-    } else if (hasSmallItem) { // Now checks for small items
+    } else if (hasSmallItem) {
         shippingItemName = 'small shipping';
     }
 
@@ -147,7 +148,7 @@ document.getElementById("checkout").addEventListener("click", () => {
         .catch(error => { /* ... */ });
 });
 
-updateCartDisplay(); // Initialize cart display on page load.
+updateCartDisplay();
 
 function hideCart() {
     document.getElementById("cart-toggle").style.display = "block";

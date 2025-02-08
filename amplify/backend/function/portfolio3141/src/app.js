@@ -1,96 +1,47 @@
-/*
-Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
-    http://aws.amazon.com/apache2.0/
-or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License.
-*/
+const express = require('express');
+const app = express();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const serverless = require('serverless-http');
 
+app.use(express.json());
 
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-	STRIPE_SECRET_KEY
-Amplify Params - DO NOT EDIT */
+app.post('/create-checkout-session', async (req, res) => {
+    const { lineItems, shipping } = req.body;
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+    try {
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: lineItems,
+            mode: 'payment',
+            shipping_address_collection: {
+                allowed_countries: ['NZ'],
+            },
+            shipping_options: [
+                {
+                    shipping_rate: process.env.SHIPPING_RATE_ID
+                },
+            ],
+            success_url: 'https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: 'https://www.matai.moorfield.co.nz/shop',
+        });
 
-// declare a new express app
-const app = express()
-app.use(bodyParser.json())
-app.use(awsServerlessExpressMiddleware.eventContext())
-
-// Enable CORS for all methods
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "*")
-  next()
+        res.json({ sessionId: session.id });
+    } catch (error) {
+        console.error("Error creating Checkout Session:", error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
+app.get('/checkout-session', async (req, res) => {
+    const { sessionId } = req.query;
 
-/**********************
- * Example get method *
- **********************/
-
-app.get('/create-checkout-session', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
+    try {
+        const session = await stripe.checkout.sessions.retrieve(sessionId);
+        res.json({ session });
+    } catch (error) {
+        console.error("Error retrieving Checkout Session:", error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
-app.get('/create-checkout-session/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
-
-/****************************
-* Example post method *
-****************************/
-
-app.post('/create-checkout-session', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-app.post('/create-checkout-session/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example put method *
-****************************/
-
-app.put('/create-checkout-session', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-app.put('/create-checkout-session/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example delete method *
-****************************/
-
-app.delete('/create-checkout-session', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
-
-app.delete('/create-checkout-session/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
-
-app.listen(3000, function() {
-    console.log("App started")
-});
-
-// Export the app object. When executing the application local this does nothing. However,
-// to port it to AWS Lambda we will create a wrapper around that will load the app from
-// this file
-module.exports = app
+exports.handler = serverless(app);

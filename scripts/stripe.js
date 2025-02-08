@@ -139,7 +139,15 @@ document.getElementById("checkout").addEventListener("click", () => {
     stripe.redirectToCheckout({
         lineItems,
         mode: "payment",
-        successUrl: "https://www.matai.moorfield.co.nz/shop/success",
+        shipping_address_collection: {
+            allowed_countries: ['NZ', 'AU', 'US', 'CA', 'GB'],
+        },
+        shipping_options: [
+            {
+                shipping_rate: process.env.SHIPPING_RATE_ID
+            },
+        ],
+        successUrl: "https://www.matai.moorfield.co.nz/shop/success?session_id={CHECKOUT_SESSION_ID}", // Correct!
         cancelUrl: "https://www.matai.moorfield.co.nz/shop",
     })
         .then(result => { /* ... */ })

@@ -116,9 +116,9 @@ document.getElementById("checkout").addEventListener("click", () => {
         quantity: item.quantity
     }));
 
-    // Shipping Logic (same as before)
+    // Shipping Logic (Prioritized)
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
 
     let shippingItemName = null;
 
@@ -141,13 +141,11 @@ document.getElementById("checkout").addEventListener("click", () => {
         mode: "payment",
         successUrl: "https://www.matai.moorfield.co.nz/shop/success",
         cancelUrl: "https://www.matai.moorfield.co.nz/shop",
-        shipping_address_collection: {
-            allowed_countries: ['NZ'], // **Crucially, specify allowed countries**
-        },
     })
         .then(result => { /* ... */ })
         .catch(error => { /* ... */ });
 });
+
 updateCartDisplay();
 
 function hideCart() {

@@ -17,16 +17,16 @@ let itemQuantities = {
 let itemDetails = {
     tuia3: { name: 'Tui - A3 Print', priceId: "price_1QpzJ3GBwEiJ8bR60HffPhkk", price: 40.00 },
     piedshagsa3: { name: 'Fighting Pied Shags - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
-    blacktuia3: { name: 'Black Tui - A3 Print 3', priceId: "price_1QnwfnGBwEiJ8bR6uPiVpqy1", price: 40.00 },
+    blacktuia3: { name: 'Black Tui - A3 Print 3', priceId: "", price: 40.00 },
     piedshagcard: { name: 'Pied Shag - Greeting Card', priceId: "price_1Qq4YrGBwEiJ8bR63EO5WSxX", price: 4.00 },
     gannetcard: { name: 'Gannet - Greeting Card', priceId: "price_1Qq4a7GBwEiJ8bR6afbCSVWM", price: 4.00 },
     dotterelcard: { name: 'Dotterel - Greeting Card', priceId: "price_1Qq4avGBwEiJ8bR6gFxpfdHt", price: 4.00 },
     piedshagscard: { name: 'Pied Shags screaming - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
-    item8: { name: 'Postcard 2', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
-    item9: { name: 'Postcard 3', priceId: "price_1Qq0mZGBwEiJ8bR6Yn6mLzSI", price: 2.00 },
+    item8: { name: 'Postcard 2', priceId: "", price: 2.00 },
+    item9: { name: 'Postcard 3', priceId: "", price: 2.00 },
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, 
-    'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 }, 
+    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 }, 
     'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } 
 };
 

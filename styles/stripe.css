@@ -116,7 +116,7 @@ body {
     float: right;
     margin-right: 3%;
     width: 12px;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
     display: block;
     text-align: right;
@@ -206,24 +206,24 @@ p {
 
 @media (max-width: 768px) {
 
-    .column {
-        padding: 10px;
-        /* Reduce padding on mobile */
-    }
-
     #cart-toggle {
         opacity: 1;
-        /* Show cart toggle on mobile */
     }
 
     #cart-items {
         max-height: 50vh;
-        /* Adjust max-height for mobile if needed */
         max-width: 100%;
     }
 
     #checkout {
         font-size: 12px;
+    }
+    #minimise {
+
+        margin-right: 5%;
+        width: 12px;
+        font-size: 14px;
+
     }
 }
 @media (max-width: 600px) {
@@ -234,6 +234,6 @@ p {
         margin-bottom: 1%;
     }
     #cart-items li {
-        font-size: 10px;
+        font-size: 11px;
     }
 }

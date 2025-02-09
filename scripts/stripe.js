@@ -146,6 +146,9 @@ document.getElementById("checkout").addEventListener("click", () => {
     }
     
     shippingAddressElement.getValue().then(function (result) {
+            const address = result.value;
+            console.log("Shipping address collected:", address); // Log the address
+
             stripe.redirectToCheckout({
                 lineItems,
                 mode: "payment",
@@ -161,6 +164,8 @@ document.getElementById("checkout").addEventListener("click", () => {
                 .catch(error => { /* ... */ });
         
     });
+
+
 });
 
 updateCartDisplay();

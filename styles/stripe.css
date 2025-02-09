@@ -194,9 +194,7 @@ hr {
     max-width: 1200px;
 }
 
-b,
-p,
-i {
+b, i, p {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;

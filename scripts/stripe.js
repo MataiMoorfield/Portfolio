@@ -32,7 +32,7 @@ let itemDetails = {
     piedshaga4: { name: 'Pied Shag - A4 Print 3', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
     
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
-    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 },
+    'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 },
     'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
 };
 

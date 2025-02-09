@@ -2,6 +2,8 @@ const stripe = Stripe(
     "pk_live_51QfpxfGBwEiJ8bR6tBdhaVL7bbVeLfxQW9CC1urqFVIt5pdx1gOMU5VyDZ7gq6LsG6t8FEBlBC2IdekcOgvFDzb400jkBtTftv"
 );
 
+const checkout = stripe.checkout;
+
 let itemQuantities = {
     tuia3: 1,
     piedshagsa3: 1,
@@ -24,9 +26,9 @@ let itemDetails = {
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     item8: { name: 'Postcard 2', priceId: "", price: 2.00 },
     item9: { name: 'Postcard 3', priceId: "", price: 2.00 },
-    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 }, 
-    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 }, 
-    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 } 
+    'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
+    'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 },
+    'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
 };
 
 function changeQuantity(item, change) {
@@ -118,7 +120,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
-    
+
     let shippingItemName = null;
 
     if (hasA3Item) {
@@ -134,15 +136,35 @@ document.getElementById("checkout").addEventListener("click", () => {
             quantity: 1
         });
     }
+    
+    shippingAddressElement.getValue().then(function (result) {
+        if (result.error) {
+            // Display error to your customer (e.g., insufficient address details)
+            console.error(result.error.message);
+            alert("Please fill in all required address fields."); // Or a better error message
+        } else {
+            // No errors, proceed to Checkout
+            const address = result.value;
+            console.log("Shipping address collected:", address); // Log the address
 
-    stripe.redirectToCheckout({
-        lineItems,
-        mode: "payment",
-        successUrl: "https://www.matai.moorfield.co.nz/shop/success",
-        cancelUrl: "https://www.matai.moorfield.co.nz/shop"
-    })
-        .then(result => { /* ... */ })
-        .catch(error => { /* ... */ });
+            // Now you have the address, include it in the Checkout Session
+            stripe.redirectToCheckout({
+                lineItems,
+                mode: "payment",
+                successUrl: "https://www.matai.moorfield.co.nz/shop/success",
+                cancelUrl: "https://www.matai.moorfield.co.nz/shop",
+                // Pass the address to Stripe (see below for how to use it)
+                shippingAddressCollection: {
+                    allowedCountries: ['NZ'], // Example countries
+                },
+                clientReferenceId: JSON.stringify(address) // Or a dedicated metadata field
+            })
+                .then(result => { /* ... */ })
+                .catch(error => { /* ... */ });
+        }
+    });
+
+
 });
 
 updateCartDisplay();
@@ -150,11 +172,11 @@ updateCartDisplay();
 function hideCart() {
     document.getElementById("cart-toggle").style.display = "block";
     document.getElementById("cart-toggle").style.opacity = 1;
-    document.getElementById("cart").style.bottom="-100%";
+    document.getElementById("cart").style.bottom = "-100%";
 }
 
 function showCart() {
-    document.getElementById("cart").style.bottom="0%";
+    document.getElementById("cart").style.bottom = "0%";
     document.getElementById("cart-toggle").style.opacity = 0;
     setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
 }
@@ -162,5 +184,5 @@ document.getElementById("minimise").addEventListener("click", hideCart);
 
 document.getElementById("cart-toggle").addEventListener("click", showCart);
 
-const shippingAddressElement = checkout.createElement('address', {mode: 'shipping'});
+const shippingAddressElement = stripe.elements().create('address', {mode: 'shipping'});
 shippingAddressElement.mount('#shipping-address');

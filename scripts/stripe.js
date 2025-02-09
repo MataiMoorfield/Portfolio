@@ -39,7 +39,7 @@ let itemDetails = {
     ganneta4: { name: 'Gannet - A4 Print', priceId: "price_1QqOp1GBwEiJ8bR6D7C0PkNn", price: 30.00 },
     piedshaga4: { name: 'Pied Shag - A4 Print 3', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
 
-    ganneta3: { name: 'Gannet - A3 Print', priceId: "", price: 40.00 },
+    ganneta3: { name: 'Gannet - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
 
     dotterelpost: { name: 'Dotterel - Postcard', priceId: "", price: 2.00 },
     piedshagspost: { name: 'Pied Shags screaming - Postcard', priceId: "", price: 2.00 },

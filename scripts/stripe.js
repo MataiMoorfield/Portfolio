@@ -30,6 +30,7 @@ let itemDetails = {
     tuia4: { name: 'Tui - A4 Print', priceId: "price_1QqOq1GBwEiJ8bR6VxqII35h", price: 30.00 },
     ganneta4: { name: 'Gannet - A4 Print', priceId: "price_1QqOp1GBwEiJ8bR6D7C0PkNn", price: 30.00 },
     piedshaga4: { name: 'Pied Shag - A4 Print 3', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
+    
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
     'a4 shipping': { name: 'A4 Shipping', priceId: '', price: 7.00 },
     'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
@@ -124,7 +125,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
-    const hasA4Item = cart.some(item => [''].includes(item.name));
+    const hasA4Item = cart.some(item => ['Dotterel - A4 Print',  'Pied Shags screaming - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3'].includes(item.name));
 
     let shippingItemName = null;
 

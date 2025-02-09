@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Matai Moorfield</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/columns.css">
     <link rel="stylesheet" href="../styles/animations.css">
     <link rel="stylesheet" href="../styles/loading.css">
     <link rel="stylesheet" href="../styles/nav.css">
@@ -21,57 +22,16 @@
         <div class="nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul>
                 <a href="../" itemprop="url" aria-label="Back to home">Home</a>
-                <a href="#a3prints" itemprop="url" aria-label="a3 prints">A3 Prints</a>
                 <a href="#cards" itemprop="url" aria-label="greeting cards">Greeting Cards</a>
+                <a href="#a4prints" itemprop="url" aria-label="a4 prints">A4 Prints</a>
                 <!--<a href="#postcards" itemprop="url" aria-label="postcards">Postcards</a>-->
             </ul>
         </div>
         <h1>Shop</h1>
         <br>
-        <h2 id="a3prints">A3 Prints</h2>
-        <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available
-            upon request.</p>
-        <div class="columns">
-            <div class="column">
-                <img src="../Images/Tui 1.jpg">
-                <p>Tui</p>
-                <p>Native New Zealand Tui amongst the flax</p>
-                <i>$40</i>
-                <div class="product">
-                    <button onclick="changeQuantity('tuia3', -1)">-</button>
-                    <span id="tuia3-quantity" class="quantity">1</span>
-                    <button onclick="changeQuantity('tuia3', 1)">+</button>
-                    <button onclick="addToCart('tuia3')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="column">
-                <img src="../Images/Fine art/Pied shag.jpg">
-                <p>Pied Shags</p>
-                <p>Pied Shags fighting on a dead branch</p>
-                <i>$40</i>
-                <div class="product">
-                    <button onclick="changeQuantity('piedshagsa3', -1)">-</button>
-                    <span id="piedshagsa3-quantity" class="quantity">1</span>
-                    <button onclick="changeQuantity('piedshagsa3', 1)">+</button>
-                    <button onclick="addToCart('piedshagsa3')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="column">
-                <img src="../Images/Tui 2.jpg">
-                <p>Black Tui</p>
-                <p>A Tui drinking nectar from a flax flower</p>
-                <i>$40</i>
-                <div class="product">
-                <button onclick="changeQuantity('blacktuia3', -1)">-</button>
-                <span id="blacktuia3-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('blacktuia3', 1)">+</button>
-                <button onclick="addToCart('blacktuia3')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
 
         <h2 id="cards">Greeting Cards</h2>
-        <p style="color: white;">A beautiful greeting card featuring an exotic bird. 10x17cm card - includes an
+        <p style="color: white;">A beautiful greeting card featuring an bird. 10x17cm card - includes an
             envelope.</p>
         <div class="columns">
             <div class="column">
@@ -132,6 +92,73 @@
                     <span id="blueduckcard-quantity" class="quantity">1</span>
                     <button onclick="changeQuantity('blueduckcard', 1)">+</button>
                     <button onclick="addToCart('blueduckcard')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <h2 id="a4prints">A4 Prints</h2>
+        <p style="color: white;">A premium photo print on high-quality A4 350gsm silk paper. Other photos are available
+            upon request.</p>
+            
+        <div class="columns">
+            <div class="column">
+                <img src="../Images/Shop/a4 prints-1.jpg">
+                <p>Dotterel</p>
+                <p>Native New Zealand beach bird</p>
+                <i>$30</i>
+                <div class="product">
+                    <button onclick="changeQuantity('dotterela4', -1)">-</button>
+                    <span id="dotterela4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('dotterela4', 1)">+</button>
+                    <button onclick="addToCart('dotterela4')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/a4 prints-2.jpg">
+                <p>Pied Shags</p>
+                <p>Shore bird wit hooked beak</p>
+                <i>$30</i>
+                <div class="product">
+                <button onclick="changeQuantity('piedshagsa4', -1)">-</button>
+                <span id="piedshagsa4-quantity" class="quantity">1</span>
+                <button onclick="changeQuantity('piedshagsa4', 1)">+</button>
+                <button onclick="addToCart('piedshagsa4')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/a4 prints-5.jpg">
+                <p>Tui</p>
+                <p>Native New Zealand Tui amongst the flax</p>
+                <i>$30</i>
+                <div class="product">
+                    <button onclick="changeQuantity('tuia4', -1)">-</button>
+                    <span id="tuia4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('tuia4', 1)">+</button>
+                    <button onclick="addToCart('tuia4')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/a4 prints-3.jpg">
+                <p>Gannet</p>
+                <p>Big gannet :)</p>
+                <i>$30</i>
+                <div class="product">
+                    <button onclick="changeQuantity('ganneta4', -1)">-</button>
+                    <span id="ganneta4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('ganneta4', 1)">+</button>
+                    <button onclick="addToCart('ganneta4')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Shop/a4 prints-4.jpg">
+                <p>Juvanile Pied Shag</p>
+                <p>Baby Pied Shag looking lost :(</p>
+                <i>$30</i>
+                <div class="product">
+                    <button onclick="changeQuantity('piedshaga4', -1)">-</button>
+                    <span id="piedshaga4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('piedshaga4', 1)">+</button>
+                    <button onclick="addToCart('piedshaga4')">Add to Cart</button>
                 </div>
             </div>
         </div>

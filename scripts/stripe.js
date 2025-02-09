@@ -131,11 +131,11 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     if (hasA3Item) {
         shippingItemName = 'a3 shipping';
-    } else if (hasSmallItem) {
-        shippingItemName = 'small shipping';
     } else if (hasA4Item) {
         shippingItemName = 'a4 shipping';
-    }
+    } else if (hasSmallItem) {
+        shippingItemName = 'small shipping';
+    } 
 
     if (shippingItemName) {
         const shippingItem = itemDetails[shippingItemName];
@@ -146,16 +146,6 @@ document.getElementById("checkout").addEventListener("click", () => {
     }
     
     shippingAddressElement.getValue().then(function (result) {
-        if (result.error) {
-            // Display error to your customer (e.g., insufficient address details)
-            console.error(result.error.message);
-            alert("Please fill in all required address fields."); // Or a better error message
-        } else {
-            // No errors, proceed to Checkout
-            const address = result.value;
-            console.log("Shipping address collected:", address); // Log the address
-
-            // Now you have the address, include it in the Checkout Session
             stripe.redirectToCheckout({
                 lineItems,
                 mode: "payment",
@@ -169,10 +159,8 @@ document.getElementById("checkout").addEventListener("click", () => {
             })
                 .then(result => { /* ... */ })
                 .catch(error => { /* ... */ });
-        }
+        
     });
-
-
 });
 
 updateCartDisplay();

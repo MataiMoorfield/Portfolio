@@ -10,7 +10,7 @@ let itemQuantities = {
     dotterelcard: 1,
     piedshagscard: 1,
     blueduckcard: 1,
-    
+
     dotterela4: 1,
     piedshagsa4: 1,
     tuia4: 1,
@@ -124,6 +124,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
+    const hasA4Item = cart.some(item => [''].includes(item.name));
 
     let shippingItemName = null;
 
@@ -131,6 +132,8 @@ document.getElementById("checkout").addEventListener("click", () => {
         shippingItemName = 'a3 shipping';
     } else if (hasSmallItem) {
         shippingItemName = 'small shipping';
+    } else if (hasA4Item) {
+        shippingItemName = 'a4 shipping';
     }
 
     if (shippingItemName) {

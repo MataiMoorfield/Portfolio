@@ -226,12 +226,14 @@ p {
         font-size: 12px;
     }
 }
-
 @media (max-width: 600px) {
     #checkout {
         font-size: 10px;
         width: 60%;
         left: 20%;
         margin-bottom: 1%;
+    }
+    #cart-items li {
+        font-size: 10px;
     }
 }

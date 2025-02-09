@@ -163,18 +163,17 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     shippingAddressElement.getValue().then(function (result) {
         const address = result.value;
-        console.log("Shipping address collected:", address); // Log the address
-
+        console.log("Shipping address collected:", address);
         stripe.redirectToCheckout({
             lineItems,
             mode: "payment",
             successUrl: "https://www.matai.moorfield.co.nz/shop/success",
             cancelUrl: "https://www.matai.moorfield.co.nz/shop",
-            // Pass the address to Stripe (see below for how to use it)
+
             shippingAddressCollection: {
-                allowedCountries: ['NZ'], // Example countries
+                allowedCountries: ['NZ'],
             },
-            clientReferenceId: JSON.stringify(address) // Or a dedicated metadata field
+            clientReferenceId: JSON.stringify(address)
         })
             .then(result => { /* ... */ })
             .catch(error => { /* ... */ });

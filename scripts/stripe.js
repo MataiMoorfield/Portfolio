@@ -16,6 +16,14 @@ let itemQuantities = {
     tuia4: 1,
     ganneta4: 1,
     piedshaga4: 1,
+
+    ganneta3: 1,
+
+    dotterelpost: 1,
+    piedshagspost: 1,
+    tuipost: 1,
+    gannetpost: 1,
+    piedshagpost: 1,
 };
 
 let itemDetails = {
@@ -24,13 +32,21 @@ let itemDetails = {
     dotterelcard: { name: 'Dotterel - Greeting Card', priceId: "price_1Qq4avGBwEiJ8bR6gFxpfdHt", price: 4.00 },
     piedshagscard: { name: 'Pied Shags screaming - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
-    
+
     dotterela4: { name: 'Dotterel - A4 Print', priceId: "price_1QqOo6GBwEiJ8bR6vq1dGkVJ", price: 30.00 },
     piedshagsa4: { name: 'Pied Shags screaming - A4 Print', priceId: "price_1QqOoeGBwEiJ8bR64ODnFIrP", price: 30.00 },
     tuia4: { name: 'Tui - A4 Print', priceId: "price_1QqOq1GBwEiJ8bR6VxqII35h", price: 30.00 },
     ganneta4: { name: 'Gannet - A4 Print', priceId: "price_1QqOp1GBwEiJ8bR6D7C0PkNn", price: 30.00 },
     piedshaga4: { name: 'Pied Shag - A4 Print 3', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
-    
+
+    ganneta3: { name: 'Gannet - A3 Print', priceId: "", price: 40.00 },
+
+    dotterelpost: { name: 'Dotterel - Postcard', priceId: "", price: 2.00 },
+    piedshagspost: { name: 'Pied Shags screaming - Postcard', priceId: "", price: 2.00 },
+    tuipost: { name: 'Tui - Postcard', priceId: "", price: 2.00 },
+    gannetpost: { name: 'Gannet - Postcard', priceId: "", price: 2.00 },
+    piedshagpost: { name: 'Pied Shag - Postcard', priceId: "", price: 2.00 },
+
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
     'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 },
     'small shipping': { name: 'Small Shipping', priceId: 'price_1Qq5wTGBwEiJ8bR6UgDokFzC', price: 5.00 }
@@ -123,9 +139,9 @@ document.getElementById("checkout").addEventListener("click", () => {
         quantity: item.quantity
     }));
 
-    const hasA3Item = cart.some(item => ['Tui - A3 Print', 'Fighting Pied Shags - A3 Print', 'Black Tui - A3 Print 3'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card'].includes(item.name)); // Updated to include piedshag-6
-    const hasA4Item = cart.some(item => ['Dotterel - A4 Print',  'Pied Shags screaming - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3'].includes(item.name));
+    const hasA3Item = cart.some(item => ['Gannet - A3 Print',].includes(item.name));
+    const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags screaming - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3'].includes(item.name));
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags screaming - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags screaming - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard',].includes(item.name)); // Updated to include piedshag-6
 
     let shippingItemName = null;
 
@@ -135,7 +151,7 @@ document.getElementById("checkout").addEventListener("click", () => {
         shippingItemName = 'a4 shipping';
     } else if (hasSmallItem) {
         shippingItemName = 'small shipping';
-    } 
+    }
 
     if (shippingItemName) {
         const shippingItem = itemDetails[shippingItemName];
@@ -144,25 +160,25 @@ document.getElementById("checkout").addEventListener("click", () => {
             quantity: 1
         });
     }
-    
-    shippingAddressElement.getValue().then(function (result) {
-            const address = result.value;
-            console.log("Shipping address collected:", address); // Log the address
 
-            stripe.redirectToCheckout({
-                lineItems,
-                mode: "payment",
-                successUrl: "https://www.matai.moorfield.co.nz/shop/success",
-                cancelUrl: "https://www.matai.moorfield.co.nz/shop",
-                // Pass the address to Stripe (see below for how to use it)
-                shippingAddressCollection: {
-                    allowedCountries: ['NZ'], // Example countries
-                },
-                clientReferenceId: JSON.stringify(address) // Or a dedicated metadata field
-            })
-                .then(result => { /* ... */ })
-                .catch(error => { /* ... */ });
-        
+    shippingAddressElement.getValue().then(function (result) {
+        const address = result.value;
+        console.log("Shipping address collected:", address); // Log the address
+
+        stripe.redirectToCheckout({
+            lineItems,
+            mode: "payment",
+            successUrl: "https://www.matai.moorfield.co.nz/shop/success",
+            cancelUrl: "https://www.matai.moorfield.co.nz/shop",
+            // Pass the address to Stripe (see below for how to use it)
+            shippingAddressCollection: {
+                allowedCountries: ['NZ'], // Example countries
+            },
+            clientReferenceId: JSON.stringify(address) // Or a dedicated metadata field
+        })
+            .then(result => { /* ... */ })
+            .catch(error => { /* ... */ });
+
     });
 
 
@@ -185,5 +201,5 @@ document.getElementById("minimise").addEventListener("click", hideCart);
 
 document.getElementById("cart-toggle").addEventListener("click", showCart);
 
-const shippingAddressElement = stripe.elements().create('address', {mode: 'shipping'});
+const shippingAddressElement = stripe.elements().create('address', { mode: 'shipping' });
 shippingAddressElement.mount('#shipping-address');

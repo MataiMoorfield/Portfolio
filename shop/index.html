@@ -96,10 +96,10 @@
             </div>
         </div>
         <br><br>
+
         <h2 id="a4prints">A4 Prints</h2>
         <p style="color: white;">A premium photo print on high-quality A4 350gsm silk paper. Other photos are available
             upon request.</p>
-            
         <div class="columns">
             <div class="column">
                 <img src="../Images/Shop/a4 prints-1.jpg">
@@ -162,47 +162,88 @@
                 </div>
             </div>
         </div>
-<!--
+        <br><br>
+        <h2 id="a3prints">A3 Prints</h2>
+        <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available upon request.</p>            
+        <div class="columns">
+            <div class="column">
+                <img src="../Images/Gannet 2.jpg">
+                <p>Gannet</p>
+                <p>lil bird</p>
+                <div class="product">
+                    <button onclick="changeQuantity('ganneta3', -1)">-</button>
+                    <span id="ganneta3-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('ganneta3', 1)">+</button>
+                    <button onclick="addToCart('ganneta3')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
         <h2 id="postcards">Postcards</h2>
         <p style="color: white;">An A6 postcard featuring a photograph of a native New Zealand bird.</p>
         <div class="columns">
             <div class="column">
-                <img src="../Images/Shop/Postcard.jpeg">
-                <p>Postcard</p>
-                <p>Pied Shags fighting</p>
+                <img src="../Images/Pied shag 2.jpg">
+                <p>Pied Shag</p>
+                <p>lil pied shag chick</p>
                 <div class="product">
                     <button onclick="changeQuantity('', -1)">-</button>
-                    <span id="item7-quantity" class="quantity">1</span>
-                    <button onclick="changeQuantity('item7', 1)">+</button>
-                    <button onclick="addToCart('item7')">Add to Cart</button>
+                    <span id="piedshagpost-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('piedshagpost', 1)">+</button>
+                    <button onclick="addToCart('piedshagpost')">Add to Cart</button>
                 </div>
             </div>
             <div class="column">
-                <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-                <p>Postcard<br>Pied Shags fighting</p>
+                <img src="../Images/Gannet 2.jpg">
+                <p>Gannet</p>
+                <p>Big loud bird "honk"</p>
                 <div class="product">
-                    <button onclick="changeQuantity('item8', -1)">-</button>
-                    <span id="item8-quantity" class="quantity">1</span>
-                    <button onclick="changeQuantity('item8', 1)">+</button>
-                    <button onclick="addToCart('item8')">Add to Cart</button>
+                    <button onclick="changeQuantity('gannetpost', -1)">-</button>
+                    <span id="gannetpost-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('gannetpost', 1)">+</button>
+                    <button onclick="addToCart('gannetpost')">Add to Cart</button>
                 </div>
             </div>
             <div class="column">
-                <img src="https://www.matai.moorfield.co.nz/Images/Fine%20art/Pied%20shag.jpg">
-                <p>Postcard<br>Pied Shags fighting</p>
+                <img src="../Images/Dotterel 1.jpg">
+                <p>Dotterel</p>
+                <p>Small cute sea bird</p>
                 <div class="product">
-                    <button onclick="changeQuantity('item9', -1)">-</button>
-                    <span id="item9-quantity" class="quantity">1</span>
-                    <button onclick="changeQuantity('item9', 1)">+</button>
-                    <button onclick="addToCart('item9')">Add to Cart</button>
+                    <button onclick="changeQuantity('dotterelpost', -1)">-</button>
+                    <span id="dotterelpost-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('dotterelpost', 1)">+</button>
+                    <button onclick="addToCart('dotterelpost')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Pied Shag 1.jpg">
+                <p>Pied Shags</p>
+                <p>Big smelly bird</p>
+                <div class="product">
+                    <button onclick="changeQuantity('piedshagspost', -1)">-</button>
+                    <span id="piedshagspost-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('piedshagspost', 1)">+</button>
+                    <button onclick="addToCart('piedshagspost')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="../Images/Tui 1.jpg">
+                <p>Tui</p>
+                <p>colourful and loud</p>
+                <div class="product">
+                    <button onclick="changeQuantity('tuipost', -1)">-</button>
+                    <span id="tuipost-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('tuipost', 1)">+</button>
+                    <button onclick="addToCart('tuipost')">Add to Cart</button>
                 </div>
             </div>
         </div>
-    -->
+
     <div id="shipping-address" style="display: none;"></div>
         <br>
         <div id="cart">
-            <p id="minimise">X</p>
+            <p id="minimise">x</p>
             <h2>Cart</h2>
             <ul id="cart-items">
             </ul>

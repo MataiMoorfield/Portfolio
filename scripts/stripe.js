@@ -197,9 +197,10 @@ function showCart() {
     document.getElementById("cart-toggle").style.opacity = 0;
     setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
 }
+
+hideCart(); 
 document.getElementById("minimise").addEventListener("click", hideCart);
 
 document.getElementById("cart-toggle").addEventListener("click", showCart);
-
 const shippingAddressElement = stripe.elements().create('address', { mode: 'shipping' });
 shippingAddressElement.mount('#shipping-address');

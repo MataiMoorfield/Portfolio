@@ -46,16 +46,6 @@ i {
   padding-right: 10%;
 }
 
-p1 {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  color: #c7c7c7;
-  text-decoration: none;
-  letter-spacing: 0.2em;
-  padding: 0px 215px;
-}
-
 .about,
 .gallery,
 .contact {

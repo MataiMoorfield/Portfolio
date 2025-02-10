@@ -72,12 +72,23 @@ function addToCart(item) {
     }
 
     showCart();
+    if (quantityToAdd > 0) {
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
 
-    itemQuantities[item] = 1;
-    document.getElementById(`${item}-quantity`).textContent = 1;
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity += quantityToAdd;
+        } else {
+            cart.push({ name, quantity: quantityToAdd, priceId, price });
+        }
 
-    updateCartDisplay();
-    saveCart();
+        showCart();
+
+        itemQuantities[item] = 1; // Reset quantity after adding
+        document.getElementById(`${item}-quantity`).textContent = 1;
+
+        updateCartDisplay();
+        saveCart();
+    } 
 
 }
 

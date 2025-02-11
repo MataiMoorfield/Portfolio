@@ -20,7 +20,7 @@ function initSlideshow(container) {
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      if (dots.length > 0) { // Check if dots exist before manipulating them
+      if (dots.length > 0) {
           for (let i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
           }
@@ -51,7 +51,6 @@ function initSlideshow(container) {
   
   }
   
-  // Initialize all slideshow containers
   const slideshowContainers = document.querySelectorAll(".slideshow-container");
   slideshowContainers.forEach(initSlideshow);
 

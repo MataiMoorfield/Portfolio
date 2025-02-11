@@ -63,16 +63,7 @@ function addToCart(item) {
     const { name, priceId, price } = itemDetails[item];
     const quantityToAdd = itemQuantities[item];
 
-    const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
-
-    if (existingItemIndex > -1) {
-        cart[existingItemIndex].quantity += quantityToAdd;
-    } else {
-        cart.push({ name, quantity: quantityToAdd, priceId, price });
-    }
-
-    showCart();
-    if (quantityToAdd > 0) {
+    if (quantityToAdd > 0) { // Only add if quantityToAdd is greater than 0
         const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
 
         if (existingItemIndex > -1) {
@@ -81,15 +72,14 @@ function addToCart(item) {
             cart.push({ name, quantity: quantityToAdd, priceId, price });
         }
 
-        showCart();
+        showCart(); // Show the cart *after* adding
 
         itemQuantities[item] = 1; // Reset quantity after adding
         document.getElementById(`${item}-quantity`).textContent = 1;
 
         updateCartDisplay();
         saveCart();
-    } 
-
+    }
 }
 
 function updateCartDisplay() {

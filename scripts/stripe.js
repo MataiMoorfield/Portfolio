@@ -65,7 +65,7 @@ function addToCart(item) {
     const { name, priceId, price } = itemDetails[item];
     const quantityToAdd = itemQuantities[item];
 
-    if (quantityToAdd > 0) { // Only add if quantityToAdd is greater than 0
+    if (quantityToAdd > 0) {
         const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
 
         if (existingItemIndex > -1) {
@@ -74,9 +74,9 @@ function addToCart(item) {
             cart.push({ name, quantity: quantityToAdd, priceId, price });
         }
 
-        showCart(); // Show the cart *after* adding
+        showCart();
 
-        itemQuantities[item] = 1; // Reset quantity after adding
+        itemQuantities[item] = 1;
         document.getElementById(`${item}-quantity`).textContent = 1;
 
         updateCartDisplay();
@@ -143,7 +143,7 @@ document.getElementById("checkout").addEventListener("click", () => {
     }));
 
     const hasA3Item = cart.some(item => ['Gannet - A3 Print',].includes(item.name));
-    const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3'].includes(item.name));
+    const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3', 'Black Tui - A4 Print'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard',].includes(item.name)); // Updated to include piedshag-6
 
     let shippingItemName = null;

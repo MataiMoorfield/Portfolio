@@ -16,6 +16,7 @@ let itemQuantities = {
     tuia4: 1,
     ganneta4: 1,
     piedshaga4: 1,
+    blacktuia4: 1,
 
     ganneta3: 1,
 
@@ -37,7 +38,8 @@ let itemDetails = {
     piedshagsa4: { name: 'Pied Shags - A4 Print', priceId: "price_1QqOoeGBwEiJ8bR64ODnFIrP", price: 30.00 },
     tuia4: { name: 'Tui - A4 Print', priceId: "price_1QqOq1GBwEiJ8bR6VxqII35h", price: 30.00 },
     ganneta4: { name: 'Gannet - A4 Print', priceId: "price_1QqOp1GBwEiJ8bR6D7C0PkNn", price: 30.00 },
-    piedshaga4: { name: 'Pied Shag - A4 Print 3', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
+    piedshaga4: { name: 'Pied Shag - A4 Print', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
+    blacktuia4: { name: 'Black Tui - A4 Print', priceId: "price_1QrvkxGBwEiJ8bR6RGDQTxBM", price: 30.00 },
 
     ganneta3: { name: 'Gannet - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
 

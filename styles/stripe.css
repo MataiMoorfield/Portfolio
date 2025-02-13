@@ -204,6 +204,16 @@ p {
     text-align: center;
 }
 
+.copyright p {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 @media (max-width: 768px) {
 
     #cart-toggle {

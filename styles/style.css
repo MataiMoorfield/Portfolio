@@ -10,21 +10,6 @@ html {
   scroll-behavior: smooth;
 }
 
-ul {
-  margin: 40px auto 0;
-  padding: 0;
-  list-style: none;
-  display: table;
-  width: 700px;
-  text-align: center;
-}
-
-li {
-  display: table-cell;
-  position: relative;
-  padding: 15px 0;
-}
-
 h1,
 h2 {
   text-align: center;

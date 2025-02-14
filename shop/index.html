@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/stripe.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head><link rel="stylesheet" href="../styles/animations.css">
+</head>
+<link rel="stylesheet" href="../styles/animations.css">
 <div id="loading-screen">
     <div class="spinner"></div>
 </div>
@@ -137,10 +138,10 @@
                 <p>A black-and-white cormorant found in coastal waters</p>
                 <i>$30</i>
                 <div class="product">
-                <button onclick="changeQuantity('piedshagsa4', -1)">-</button>
-                <span id="piedshagsa4-quantity" class="quantity">1</span>
-                <button onclick="changeQuantity('piedshagsa4', 1)">+</button>
-                <button onclick="addToCart('piedshagsa4')">Add to Cart</button>
+                    <button onclick="changeQuantity('piedshagsa4', -1)">-</button>
+                    <span id="piedshagsa4-quantity" class="quantity">1</span>
+                    <button onclick="changeQuantity('piedshagsa4', 1)">+</button>
+                    <button onclick="addToCart('piedshagsa4')">Add to Cart</button>
                 </div>
             </div>
             <div class="column">
@@ -182,7 +183,8 @@
         </div>
         <br><br>
         <h2 id="a3prints">Large Prints</h2>
-        <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available upon request.</p>            
+        <p style="color: white;">A premium photo print on high-quality A3 350gsm silk paper. Other photos are available
+            upon request.</p>
         <div class="columns">
             <div class="column">
                 <img src="../Images/Shop/gannet a3.jpeg">
@@ -267,7 +269,7 @@
                 <p>Tui</p>
                 <p>Native New Zealand Tui amongst the flax</p>
                 <i>$2</i>
-               <div class="product">
+                <div class="product">
                     <button onclick="changeQuantity('tuipost', -1)">-</button>
                     <span id="tuipost-quantity" class="quantity">1</span>
                     <button onclick="changeQuantity('tuipost', 1)">+</button>
@@ -289,6 +291,7 @@
             <img src="../../Images/cart-black-icon.svg" />
         </div>
         <div id="shipping-address" style="display: none;"></div>
+
         <br />
         <br />
         <br />
@@ -297,13 +300,18 @@
         <img src="../Images/signature.png"
             style="height: auto; width: 200px; opacity: 75%; display: block; margin-left: auto; margin-right: auto; pointer-events: none;"
             alt="Matai Moorfield" />
-        <br />
-        <br />
-        <br />
-        <p class="footer">© 2025 Matai Moorfield. All rights reserved.</p>
+        <div class="nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <ul>
+                <a href="../terms/" itemprop="url" aria-label="Terms and Shipping details">Terms and Shipping
+                    Details</a>
+            </ul>
+        </div>
+        <br /> <br /> <br /> <br />
+        <p class="footer" style="color: #c7c7c7;">© 2025 Matai Moorfield. All rights reserved.</p>
         <br />
         <div class="copyright">
-            <p style="color: #c7c7c7;">All photographs on this website are protected by copyright and are the property of Matai
+            <p style="color: #c7c7c7;">All photographs on this website are protected by copyright and are the property
+                of Matai
                 Moorfield.
                 Unauthorised use, reproduction, or distribution of these images is strictly prohibited. For
                 inquiries
@@ -313,9 +321,9 @@
         <br />
         <br />
     </div>
-    </div>
 
-    
+
+
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://js.stripe.com/v3"></script>
     <script src="../scripts/scrolling.js"></script>

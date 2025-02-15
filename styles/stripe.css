@@ -130,7 +130,8 @@ h2 {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
-    padding-right: 30px;
+    padding-right: 10%;
+    padding-left: 10%;
 }
 
 .cart-item-details {
@@ -226,8 +227,8 @@ p {
         margin-bottom: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid #eee;
-        padding-right: 10px;
-        /* Reduced right padding */
+        padding-right: 1%;
+        padding-left: 1%;
     }
 
     .cart-item-details {

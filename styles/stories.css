@@ -74,3 +74,8 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+
+p {
+  padding-left: 20%;
+  padding-right: 20%;
+}

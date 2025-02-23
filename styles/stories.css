@@ -1,5 +1,6 @@
 .slideshow-container {
-  max-width: 600px; /* Adjust as needed */
+  max-width: 600px;
+  /* Adjust as needed */
   position: relative;
   margin: auto;
 }
@@ -13,7 +14,8 @@
   height: auto;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -34,8 +36,9 @@
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text {
@@ -61,7 +64,8 @@
   margin-bottom: 100px;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -71,8 +75,13 @@
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 p {

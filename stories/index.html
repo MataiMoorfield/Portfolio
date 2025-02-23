@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../styles/loading.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/stories.css">
+    <link rel="stylesheet" href="../styles/columns.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <link rel="icon" href="Images/favicon/favicon.ico" />
 </head>
 
@@ -40,96 +42,117 @@
         <p itemprop="jobTitle">A collection of photos used to tell stories</p>
         <br><br>
         <!--------------- Behaviour --------------->
-        <h2 id="behaviour">Behaviour</h2>
-        <p>Pied Shags demonstrate behaviour through their actions</p>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="../Images/Pied Shag 1.jpg" alt="Pied shags screaming">
+        <div id="gallery" class="gallery fade-in" itemscope itemtype="https://schema.org/CreativeWork">
+            <h2>Behaviour</h2>
+            <div class="columns">
+                <div class="column">
+                    <img src="../Images/Gull-2.jpg"
+                        alt="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo"
+                        itemprop="contentUrl" title="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo" />
+                </div>
+                <div class="column">
+                    <img src="../Images/Gull-3.jpg"
+                        alt="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo"
+                        itemprop="contentUrl" title="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo" />
+                </div>
+                <div class="column">
+                    <img src="../Images/Gull-4.jpg"
+                        alt="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo"
+                        itemprop="contentUrl" title="Southern black-backed gull (Kelp Gull) eating a dead rabbit bird photo" />
+                </div>
             </div>
-            <div class="mySlides fade">
-                <img src="../Images/Fine art/Pied shag.jpg" alt="Pied Shags fighting">
+            <h2 id="behaviour">Behaviour</h2>
+            <p>Pied Shags demonstrate behaviour through their actions</p>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="../Images/Pied Shag 1.jpg" alt="Pied shags screaming">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../Images/Fine art/Pied shag.jpg" alt="Pied Shags fighting">
+                </div>
+                <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
             </div>
-            <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-        <!--------------- Habitat --------------->
-        <br><br>
-        <h2 id="habitat">Habitat</h2>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="../Images/stories/Kingfisher.jpg" alt="Pied Shags fighting">
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
-            <div class="mySlides fade">
-                <img src="../Images/stories/Frog.jpg" alt="Frog">
+            <!--------------- Habitat --------------->
+            <br><br>
+            <h2 id="habitat">Habitat</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="../Images/stories/Kingfisher.jpg" alt="Pied Shags fighting">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../Images/stories/Frog.jpg" alt="Frog">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../Images/stories/Cicada.jpg" alt="cicada">
+                </div>
+                <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
             </div>
-            <div class="mySlides fade">
-                <img src="../Images/stories/Cicada.jpg" alt="cicada">
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-            <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <!--------------- Conservation --------------->
-        <br><br>
-        <h2 id="conservation">Conservation</h2>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="../Images/stories/Brown Teal.jpg" alt="Pied Shags fighting">
+            <!--------------- Conservation --------------->
+            <br><br>
+            <h2 id="conservation">Conservation</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="../Images/stories/Brown Teal.jpg" alt="Pied Shags fighting">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../Images/Blue Duck 1.jpg" alt="Frog">
+                </div>
+                <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
             </div>
-            <div class="mySlides fade">
-                <img src="../Images/Blue Duck 1.jpg" alt="Frog">
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-            <a class="prev">&#10094;</a> <a class="next">&#10095;</a>
+            <p>1st slide: New Zealand Brown Teal. This species is classified as "At risk-increasing". Between 2000-2500
+                of
+                these ducks are left.</p>
+            <p>2nd slide: New Zealand Blue Duck (whio). Found on the $10 note, this iconic duck is now classified as
+                "Nationally Vulnerable" due to its low population of 3000 throughout New Zealand.</p>
+            <!-- Footer -->
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="../Images/signature.png"
+                style="height: auto; width: 200px; opacity: 75%; display: block; margin-left: auto; margin-right: auto; pointer-events: none;"
+                alt="Matai Moorfield" />
+            <br />
+            <br />
+            <br />
+            <p style="color: #c7c7c7;">© 2025 Matai Moorfield. All rights reserved.</p>
+            <br />
+            <div class="copyright">
+                <p style="color: #c7c7c7;">All photographs on this website are protected by copyright and are the
+                    property
+                    of Matai
+                    Moorfield.
+                    Unauthorised use, reproduction, or distribution of these images is strictly prohibited. For
+                    inquiries
+                    regarding licensing, please contact matai@moorfield.co.nz</p>
+            </div>
+            <br />
+            <br />
         </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <p>1st slide: New Zealand Brown Teal. This species is classified as "At risk-increasing". Between 2000-2500 of
-            these ducks are left.</p>
-        <p>2nd slide: New Zealand Blue Duck (whio). Found on the $10 note, this iconic duck is now classified as
-            "Nationally Vulnerable" due to its low population of 3000 throughout New Zealand.</p>
-        <!-- Footer -->
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <img src="../Images/signature.png"
-            style="height: auto; width: 200px; opacity: 75%; display: block; margin-left: auto; margin-right: auto; pointer-events: none;"
-            alt="Matai Moorfield" />
-        <br />
-        <br />
-        <br />
-        <p style="color: #c7c7c7;">© 2025 Matai Moorfield. All rights reserved.</p>
-        <br />
-        <div class="copyright">
-            <p style="color: #c7c7c7;">All photographs on this website are protected by copyright and are the property
-                of Matai
-                Moorfield.
-                Unauthorised use, reproduction, or distribution of these images is strictly prohibited. For
-                inquiries
-                regarding licensing, please contact matai@moorfield.co.nz</p>
-        </div>
-        <br />
-        <br />
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../scripts/loading.js" defer></script>
-    <script src="../scripts/scrolling.js" defer></script>
-    <script src="../scripts/modal.js" defer></script>
-    <script src="../scripts/stories.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="../scripts/loading.js" defer></script>
+        <script src="../scripts/scrolling.js" defer></script>
+        <script src="../scripts/modal.js" defer></script>
+        <script src="../scripts/stories.js" defer></script>
 </body>
 
 </html>

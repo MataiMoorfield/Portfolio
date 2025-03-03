@@ -17,3 +17,17 @@
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
+.full-width-image {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 10px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width */
+}

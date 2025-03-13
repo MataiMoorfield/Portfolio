@@ -51,7 +51,7 @@ let itemDetails = {
     dotterela3: { name: 'Dotterel - A3 Print', priceId: "price_1R22DfGBwEiJ8bR6ECccntRa", price: 40.00 },
     piedshagsa3: { name: 'Pied Shags - A3 Print', priceId: "price_1R22EaGBwEiJ8bR6gs7Jt9XW", price: 40.00 },
     tuia3: { name: 'Tui - A3 Print', priceId: "price_1R22FFGBwEiJ8bR6KAHmcrVK", price: 40.00 },
-    littleshaga3:{ name: 'Little Pied Shag - A3 Print', priceId: "price_1R22FrGBwEiJ8bR69IOenPrs", price: 40.00 },
+    littleshaga3: { name: 'Little Pied Shag - A3 Print', priceId: "price_1R22FrGBwEiJ8bR69IOenPrs", price: 40.00 },
 
     dotterelpost: { name: 'Dotterel - Postcard', priceId: "price_1QqRkvGBwEiJ8bR6K7O60IjW", price: 2.00 },
     piedshagspost: { name: 'Pied Shags - Postcard', priceId: "price_1QqRlRGBwEiJ8bR6B0VSPjxV", price: 2.00 },

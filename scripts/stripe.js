@@ -152,7 +152,7 @@ document.getElementById("checkout").addEventListener("click", () => {
         quantity: item.quantity
     }));
 
-    const hasA3Item = cart.some(item => ['Gannet - A3 Print', 'Black Tui - A3 Print'].includes(item.name));
+    const hasA3Item = cart.some(item => ['Gannet - A3 Print', 'Black Tui - A3 Print', 'Dotterel - A3 Print', 'Pied Shags - A3 Print', 'Tui - A3 Print', 'Little Pied Shag - A3 Print'].includes(item.name));
     const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3', 'Black Tui - A4 Print'].includes(item.name));
     const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard',].includes(item.name)); // Updated to include piedshag-6
 

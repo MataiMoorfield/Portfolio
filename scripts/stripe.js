@@ -20,6 +20,10 @@ let itemQuantities = {
 
     ganneta3: 1,
     blacktuia3: 1,
+    dotterela3: 1,
+    piedshagsa3: 1,
+    tuia3: 1,
+    littleshaga3: 1,
 
     dotterelpost: 1,
     piedshagspost: 1,
@@ -44,6 +48,10 @@ let itemDetails = {
 
     ganneta3: { name: 'Gannet - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
     blacktuia3: { name: 'Black Tui - A3 Print', priceId: "price_1Qrw41GBwEiJ8bR6NPXDVagf", price: 40.00 },
+    dotterela3: { name: 'Dotterel - A3 Print', priceId: "price_1R22DfGBwEiJ8bR6ECccntRa", price: 40.00 },
+    piedshagsa3: { name: 'Pied Shags - A3 Print', priceId: "price_1R22EaGBwEiJ8bR6gs7Jt9XW", price: 40.00 },
+    tuia3: { name: 'Tui - A3 Print', priceId: "price_1R22FFGBwEiJ8bR6KAHmcrVK", price: 40.00 },
+    littleshaga3:{ name: 'Little Pied Shag - A3 Print', priceId: "price_1R22FrGBwEiJ8bR69IOenPrs", price: 40.00 },
 
     dotterelpost: { name: 'Dotterel - Postcard', priceId: "price_1QqRkvGBwEiJ8bR6K7O60IjW", price: 2.00 },
     piedshagspost: { name: 'Pied Shags - Postcard', priceId: "price_1QqRlRGBwEiJ8bR6B0VSPjxV", price: 2.00 },
@@ -202,7 +210,7 @@ function showCart() {
     setTimeout(_ => document.getElementById("cart-toggle").style.display = "none", 500);
 }
 
-hideCart(); 
+hideCart();
 document.getElementById("minimise").addEventListener("click", hideCart);
 
 document.getElementById("cart-toggle").addEventListener("click", showCart);

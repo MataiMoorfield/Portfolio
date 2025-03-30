@@ -180,7 +180,7 @@ document.getElementById("checkout").addEventListener("click", () => {
         stripe.redirectToCheckout({
             lineItems,
             mode: "payment",
-            successUrl: "https://www.matai.moorfield.co.nz/shop/success",
+            successUrl: "https://www.matai.moorfield.co.nz/shop/success/",
             cancelUrl: "https://www.matai.moorfield.co.nz/shop",
 
             shippingAddressCollection: {

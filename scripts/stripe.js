@@ -46,12 +46,12 @@ let itemDetails = {
     piedshaga4: { name: 'Pied Shag - A4 Print', priceId: "price_1QqOpMGBwEiJ8bR6sW1u55Bj", price: 30.00 },
     blacktuia4: { name: 'Black Tui - A4 Print', priceId: "price_1QrvkxGBwEiJ8bR6RGDQTxBM", price: 30.00 },
 
-    ganneta3: { name: 'Gannet - A3 Print', priceId: "price_1Qq4XKGBwEiJ8bR636Z9tcLe", price: 40.00 },
-    blacktuia3: { name: 'Black Tui - A3 Print', priceId: "price_1Qrw41GBwEiJ8bR6NPXDVagf", price: 40.00 },
-    dotterela3: { name: 'Dotterel - A3 Print', priceId: "price_1R22DfGBwEiJ8bR6ECccntRa", price: 40.00 },
-    piedshagsa3: { name: 'Pied Shags - A3 Print', priceId: "price_1R22EaGBwEiJ8bR6gs7Jt9XW", price: 40.00 },
-    tuia3: { name: 'Tui - A3 Print', priceId: "price_1R22FFGBwEiJ8bR6KAHmcrVK", price: 40.00 },
-    littleshaga3: { name: 'Little Pied Shag - A3 Print', priceId: "price_1R22FrGBwEiJ8bR69IOenPrs", price: 40.00 },
+    ganneta3: { name: 'Gannet - A3 Print', priceId: "price_1RA21DGBwEiJ8bR6A8AbPIZD", price: 40.00 },
+    blacktuia3: { name: 'Black Tui - A3 Print', priceId: "price_1RA20ZGBwEiJ8bR61EFCQzYZ", price: 40.00 },
+    dotterela3: { name: 'Dotterel - A3 Print', priceId: "price_1RA20GGBwEiJ8bR6V2bgIYx5", price: 40.00 },
+    piedshagsa3: { name: 'Pied Shags - A3 Print', priceId: "price_1RA1zlGBwEiJ8bR6gYYFQoIj", price: 40.00 },
+    tuia3: { name: 'Tui - A3 Print', priceId: "price_1RA1zGGBwEiJ8bR6vdoE5qwI", price: 40.00 },
+    littleshaga3: { name: 'Little Pied Shag - A3 Print', priceId: "price_1RA1y7GBwEiJ8bR6oRq1uUWT", price: 40.00 },
 
     dotterelpost: { name: 'Dotterel - Postcard', priceId: "price_1QqRkvGBwEiJ8bR6K7O60IjW", price: 2.00 },
     piedshagspost: { name: 'Pied Shags - Postcard', priceId: "price_1QqRlRGBwEiJ8bR6B0VSPjxV", price: 2.00 },

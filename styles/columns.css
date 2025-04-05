@@ -17,6 +17,25 @@
   border-radius: 5px;
 }
 
+.flex-grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flex-grid {
+  padding: 20px;
+}
+
+.flex-grid img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
 .full-width-image {
   max-width: 1200px;
   margin: 20px auto;

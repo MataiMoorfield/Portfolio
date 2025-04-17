@@ -8,6 +8,7 @@ html {
   font: bold 14px/1.4 "Open Sans", Arial, sans-serif;
   background: #000;
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 h1,

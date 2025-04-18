@@ -32,6 +32,7 @@ window.onload = function () {
     }, 100);
 };
 
+
 const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', e => {

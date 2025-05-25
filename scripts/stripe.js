@@ -36,6 +36,13 @@ let itemQuantities = {
     tuipost: 1,
     gannetpost: 1,
     piedshagpost: 1,
+
+    blacktuipost: 1,
+    heronfishpost: 1,
+    frogpost: 1,
+    whiteheronpost: 1,
+    blueduckpost: 1,
+    littleshagpost: 1,
 };
 
 let itemDetails = {
@@ -70,6 +77,12 @@ let itemDetails = {
     tuipost: { name: 'Tui - Postcard', priceId: "price_1QqRlvGBwEiJ8bR6ec01PFrY", price: 2.00 },
     gannetpost: { name: 'Gannet - Postcard', priceId: "price_1QqRkRGBwEiJ8bR6WUlhHYiC", price: 2.00 },
     piedshagpost: { name: 'Pied Shag - Postcard', priceId: "price_1QqRjzGBwEiJ8bR6kCLqPKgC", price: 2.00 },
+    blacktuipost: { name: 'Black Tui - Postcard', priceId: "", price: 2.00 },
+    heronfishpost: { name: 'Heron & Fish - Postcard', priceId: "", price: 2.00 },
+    frogpost: { name: 'Bell Frog - Postcard', priceId: "", price: 2.00 },
+    whiteheronpost: { name: 'White Heron - Postcard', priceId: "", price: 2.00 },
+    blueduckpost: { name: 'Blue Duck - Postcard', priceId: "", price: 2.00 },
+    littleshagpost: { name: 'Little Shag - Postcard', priceId: "", price: 2.00 },
 
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
     'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 },

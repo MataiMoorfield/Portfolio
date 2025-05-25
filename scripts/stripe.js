@@ -10,6 +10,7 @@ let itemQuantities = {
     dotterelcard: 1,
     piedshagscard: 1,
     blueduckcard: 1,
+    blacktuicard: 1,
 
     dotterela4: 1,
     piedshagsa4: 1,
@@ -38,6 +39,7 @@ let itemDetails = {
     dotterelcard: { name: 'Dotterel - Greeting Card', priceId: "price_1Qq4avGBwEiJ8bR6gFxpfdHt", price: 4.00 },
     piedshagscard: { name: 'Pied Shags - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
+    blacktuicard: { name: 'Black Tui - Greeting Card', priceId: "price_1RSY7YGBwEiJ8bR6PLsQyk1p", price: 4.00 },
 
     dotterela4: { name: 'Dotterel - A4 Print', priceId: "price_1RA24jGBwEiJ8bR68RVwFWUl", price: 40.00 },
     piedshagsa4: { name: 'Pied Shags - A4 Print', priceId: "price_1RA25EGBwEiJ8bR64S6xEr9z", price: 40.00 },

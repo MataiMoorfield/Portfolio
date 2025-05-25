@@ -36,7 +36,6 @@ let itemQuantities = {
     tuipost: 1,
     gannetpost: 1,
     piedshagpost: 1,
-
     blacktuipost: 1,
     heronfishpost: 1,
     frogpost: 1,
@@ -77,12 +76,13 @@ let itemDetails = {
     tuipost: { name: 'Tui - Postcard', priceId: "price_1QqRlvGBwEiJ8bR6ec01PFrY", price: 2.00 },
     gannetpost: { name: 'Gannet - Postcard', priceId: "price_1QqRkRGBwEiJ8bR6WUlhHYiC", price: 2.00 },
     piedshagpost: { name: 'Pied Shag - Postcard', priceId: "price_1QqRjzGBwEiJ8bR6kCLqPKgC", price: 2.00 },
+    
     blacktuipost: { name: 'Black Tui - Postcard', priceId: "", price: 2.00 },
     heronfishpost: { name: 'Heron & Fish - Postcard', priceId: "", price: 2.00 },
     frogpost: { name: 'Bell Frog - Postcard', priceId: "", price: 2.00 },
     whiteheronpost: { name: 'White Heron - Postcard', priceId: "", price: 2.00 },
     blueduckpost: { name: 'Blue Duck - Postcard', priceId: "", price: 2.00 },
-    littleshagpost: { name: 'Little Shag - Postcard', priceId: "", price: 2.00 },
+    littleshagpost: { name: 'Little Pied Shag - Postcard', priceId: "", price: 2.00 },
 
     'a3 shipping': { name: 'A3 Shipping', priceId: 'price_1Qq5vCGBwEiJ8bR6qBeoR29j', price: 10.00 },
     'a4 shipping': { name: 'A4 Shipping', priceId: 'price_1Qq5vmGBwEiJ8bR6XAzyGA6Q', price: 7.00 },
@@ -179,7 +179,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Gannet - A3 Print', 'Black Tui - A3 Print', 'Dotterel - A3 Print', 'Pied Shags - A3 Print', 'Tui - A3 Print', 'Little Pied Shag - A3 Print'].includes(item.name));
     const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3', 'Black Tui - A4 Print'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard', 'Black Tui - Greeting Card', 'Tui - Greeting Card', 'White Heron - Greeting Card', 'Heron & Fish - Greeting Card', 'Little Pied Shag - Greeting Card', 'Bell Frog - Greeting Card'].includes(item.name)); // Updated to include 
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard', 'Black Tui - Greeting Card', 'Tui - Greeting Card', 'White Heron - Greeting Card', 'Heron & Fish - Greeting Card', 'Little Pied Shag - Greeting Card', 'Bell Frog - Greeting Card', 'Black Tui - Postcard', 'Heron & Fish - Postcard', 'Bell Frog - Postcard', 'White Heron - Postcard', 'Blue Duck - Postcard', 'Little Pied Shag - Postcard',].includes(item.name)); // Updated to include 
 
     let shippingItemName = null;
 

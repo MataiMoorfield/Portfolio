@@ -40,7 +40,7 @@ let itemDetails = {
     piedshagscard: { name: 'Pied Shags - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     blacktuicard: { name: 'Black Tui - Greeting Card', priceId: "price_1RSY7YGBwEiJ8bR6PLsQyk1p", price: 4.00 },
-    tuicard: { name: 'Tui - Greeting Card', priceId: "", price: 4.00 },
+    tuicard: { name: 'Tui - Greeting Card', priceId: "price_1RSYBgGBwEiJ8bR6wgkKQRus", price: 4.00 },
 
     dotterela4: { name: 'Dotterel - A4 Print', priceId: "price_1RA24jGBwEiJ8bR68RVwFWUl", price: 40.00 },
     piedshagsa4: { name: 'Pied Shags - A4 Print', priceId: "price_1RA25EGBwEiJ8bR64S6xEr9z", price: 40.00 },

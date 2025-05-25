@@ -11,7 +11,7 @@ let itemQuantities = {
     piedshagscard: 1,
     blueduckcard: 1,
     blacktuicard: 1,
-
+    tuicard: 1,
     dotterela4: 1,
     piedshagsa4: 1,
     tuia4: 1,
@@ -40,6 +40,7 @@ let itemDetails = {
     piedshagscard: { name: 'Pied Shags - Greeting Card', priceId: "price_1Qq7gvGBwEiJ8bR6H75f32hE", price: 4.00 },
     blueduckcard: { name: 'Blue Duck - Greeting Card', priceId: "price_1Qq7gUGBwEiJ8bR6UQzJeCBF", price: 4.00 },
     blacktuicard: { name: 'Black Tui - Greeting Card', priceId: "price_1RSY7YGBwEiJ8bR6PLsQyk1p", price: 4.00 },
+    tuicard: { name: 'Tui - Greeting Card', priceId: "", price: 4.00 },
 
     dotterela4: { name: 'Dotterel - A4 Print', priceId: "price_1RA24jGBwEiJ8bR68RVwFWUl", price: 40.00 },
     piedshagsa4: { name: 'Pied Shags - A4 Print', priceId: "price_1RA25EGBwEiJ8bR64S6xEr9z", price: 40.00 },
@@ -156,7 +157,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Gannet - A3 Print', 'Black Tui - A3 Print', 'Dotterel - A3 Print', 'Pied Shags - A3 Print', 'Tui - A3 Print', 'Little Pied Shag - A3 Print'].includes(item.name));
     const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3', 'Black Tui - A4 Print'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard',].includes(item.name)); // Updated to include piedshag-6
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard', 'Black Tui - Greeting Card', 'Tui - Greeting Card'].includes(item.name)); // Updated to include 
 
     let shippingItemName = null;
 

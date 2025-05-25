@@ -13,6 +13,7 @@ let itemQuantities = {
     blacktuicard: 1,
     tuicard: 1,
     whiteheroncard: 1,
+    heronfishcard: 1,
 
     dotterela4: 1,
     piedshagsa4: 1,
@@ -44,7 +45,9 @@ let itemDetails = {
     blacktuicard: { name: 'Black Tui - Greeting Card', priceId: "price_1RSY7YGBwEiJ8bR6PLsQyk1p", price: 4.00 },
     tuicard: { name: 'Tui - Greeting Card', priceId: "price_1RSYBgGBwEiJ8bR6wgkKQRus", price: 4.00 },
     whiteheroncard: { name: 'White Heron - Greeting Card', priceId: "price_1RSYHEGBwEiJ8bR6Jz8WTuVo", price: 4.00 },
-    
+    heronfishcard: { name: 'Heron & Fish - Greeting Card', priceId: "price_1RSYLAGBwEiJ8bR60oomzxdJ", price: 4.00 },
+
+
     dotterela4: { name: 'Dotterel - A4 Print', priceId: "price_1RA24jGBwEiJ8bR68RVwFWUl", price: 40.00 },
     piedshagsa4: { name: 'Pied Shags - A4 Print', priceId: "price_1RA25EGBwEiJ8bR64S6xEr9z", price: 40.00 },
     tuia4: { name: 'Tui - A4 Print', priceId: "price_1RA22MGBwEiJ8bR6FtMf1MAi", price: 40.00 },
@@ -160,7 +163,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
     const hasA3Item = cart.some(item => ['Gannet - A3 Print', 'Black Tui - A3 Print', 'Dotterel - A3 Print', 'Pied Shags - A3 Print', 'Tui - A3 Print', 'Little Pied Shag - A3 Print'].includes(item.name));
     const hasA4Item = cart.some(item => ['Dotterel - A4 Print', 'Pied Shags - A4 Print', 'Tui - A4 Print', 'Gannet - A4 Print', 'Pied Shag - A4 Print 3', 'Black Tui - A4 Print'].includes(item.name));
-    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard', 'Black Tui - Greeting Card', 'Tui - Greeting Card', 'White Heron - Greeting Card',].includes(item.name)); // Updated to include 
+    const hasSmallItem = cart.some(item => ['Pied Shag - Greeting Card', 'Gannet - Greeting Card', 'Dotterel - Greeting Card', 'Pied Shags - Greeting Card', 'Blue Duck - Greeting Card', 'Dotterel - Postcard', 'Pied Shags - Postcard', 'Tui - Postcard', 'Gannet - Postcard', 'Pied Shag - Postcard', 'Black Tui - Greeting Card', 'Tui - Greeting Card', 'White Heron - Greeting Card', 'Heron & Fish - Greeting Card'].includes(item.name)); // Updated to include 
 
     let shippingItemName = null;
 

@@ -205,7 +205,7 @@ document.getElementById("checkout").addEventListener("click", () => {
             lineItems,
             mode: "payment",
             successUrl: "https://www.matai.moorfield.co.nz/shop/success/",
-            cancelUrl: "https://www.matai.moorfield.co.nz/shop",
+            cancelUrl: "https://www.matai.moorfield.co.nz/shop/",
 
             shippingAddressCollection: {
                 allowedCountries: ['NZ'],

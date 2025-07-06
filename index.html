@@ -18,8 +18,10 @@
     <link rel="stylesheet" href="styles/modal.css" />
     <link rel="stylesheet" href="styles/animations.css" />
     <link rel="stylesheet" href="styles/loading.css" />
+    <link rel="stylesheet" href="styles/slider.css">
     <link rel="icon" href="Images/favicon/favicon.ico" />
     <link rel="stylesheet" href="https://use.typekit.net/ksu0lnr.css" />
+
 </head>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGH2H41V86"></script>
@@ -50,10 +52,9 @@
         <div itemscope itemtype="https://schema.org/Person">
             <h1 itemprop="name">Matai Moorfield</h1>
             <p itemprop="jobTitle">STUDENT WILDLIFE PHOTOGRAPHER</p>
-            <div class="fade-in-image">
-                <img src="Images/Tui (hero).jpg" alt="Tui"
-                    style="width: 80%; float: right; animation: fadeInAnimation ease 5s; padding-right: 10%;"
-                    title="Tui" />
+            <div class="hero-slider">
+                <img src="Images/Tui (hero).jpg" class="active" />
+                <img src="Images/Kaka (hero).jpg" />
             </div>
             <div class="clear"></div>
             <div id="about" class="about">
@@ -221,14 +222,6 @@
             <br />
             <h2 itemprop="name">Partnered with</h2>
             <div class="flex-grids">
-                <!--<div class="flex-grid">
-                    <img src="/Images/logos/nikon.png"
-                        style="height: 100px; width: auto; display: block; margin: auto;">
-                </div>-->
-                <!--<div class="flex-grid">
-                    <img src="/Images/logos/Department_of_Conservation_New_Zealand_logo.svg.png"
-                        style="height: 100px; width: auto; display: block; margin: auto;">
-                </div>-->
                 <div class="flex-grid">
                     <a target="_blank" href="https://habitat-tuateawa.org/"><img
                             src="/Images/logos/habitat tuateawa.png"
@@ -270,7 +263,8 @@
     <script src="scripts/scrolling.js" defer></script>
     <script src="scripts/modal.js" defer></script>
     <script src="scripts/email.js" defer></script>
-    <!--<div class="cursor"></div>-->
+    <script src="scripts/slider.js" defer></script>
+
 </body>
 
 </html>

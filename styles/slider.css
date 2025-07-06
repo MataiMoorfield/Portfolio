@@ -1,0 +1,65 @@
+/* New styles for the image slider */
+        .hero-slider {
+            position: relative;
+            width: 100%; /* Make it full width now */
+            overflow: hidden;
+            padding-top: 80%; 
+        }
+
+        .hero-slider img {
+            position: absolute;
+            top: 0;
+            height: 100%; /* Fills the height of the container */
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            /* Add default left position for all images so it doesn't inherit from previous rules */
+            left: 0;
+        }
+
+        .hero-slider img.active {
+            opacity: 1;
+        }
+
+        /* Specific positioning for each image */
+        .hero-slider img:nth-child(1) { /* This targets the first image (Tui) */
+            left: 50%;
+            transform: translateX(-50%); /* Centers the image horizontally */
+            width: 70%; /* Make the first image larger (e.g., 90% of slider width) */
+        }
+
+        .hero-slider img:nth-child(2) { /* This targets the second image (Kaka) */
+            left: 0; /* Sticks it to the left */
+            width: 90%; /* Set the second image to a smaller width, relative to the slider container */
+            /* You can adjust this percentage (e.g., 60%, 75%) based on your visual preference */
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For screens smaller than 768px (common tablet portrait/larger phone landscape) */
+        @media (max-width: 768px) {
+            .hero-slider {
+                margin: 0 auto;
+                padding-right: 0;
+            }
+
+            .hero-slider img:nth-child(1) {
+                width: 95%; /* Adjust size for smaller screens (still larger than the second) */
+            }
+
+            .hero-slider img:nth-child(2) {
+                width: 85%; /* Adjust size for smaller screens (still smaller than the first) */
+            }
+        }
+
+        /* For screens smaller than 480px (common phone portrait) */
+        @media (max-width: 480px) {
+            .hero-slider img:nth-child(1) {
+                width: 100%; /* Make first image full width on very small screens */
+                /* When it's 100%, centering with transform might not be necessary, but it doesn't hurt */
+            }
+            .hero-slider img:nth-child(2) {
+                width: 100%; /* Make second image full width on very small screens */
+                /* On very small screens, having both at 100% usually looks best */
+            }
+        }
